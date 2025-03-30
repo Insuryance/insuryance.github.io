@@ -27,6 +27,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    window.onload = function () {
+    const bootText = [
+        "Initializing system...",
+        "Loading user environment...",
+        "Checking network connection...",
+        "Welcome to Insuryance Terminal!"
+    ];
+
+    const terminalOutput = document.getElementById("terminal-output");
+
+    let index = 0;
+    function showBootText() {
+        if (index < bootText.length) {
+            let bootLine = document.createElement("p");
+            terminalOutput.appendChild(bootLine);
+            typeResponse(bootText[index], bootLine);
+            index++;
+            setTimeout(showBootText, 700);
+        } else {
+            let welcomeLine = document.createElement("p");
+            welcomeLine.innerHTML = "Type 'help' to get started.";
+            terminalOutput.appendChild(welcomeLine);
+        }
+    }
+    showBootText();
+};
+
     function interpretCommand(command) {
         switch (command) {
             case "help":
