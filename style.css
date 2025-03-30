@@ -35,7 +35,7 @@ body {
 
 /* Command Input */
 #terminal-input {
-    background: none;
+    background: black;
     border: none;
     color: #33ff33;
     font-family: 'Courier New', monospace;
@@ -43,6 +43,8 @@ body {
     width: 100%;
     outline: none;
     caret-color: #33ff33;
+    padding: 5px;
+    text-align: left;
 }
 
 /* Cursor Blink Effect */
@@ -53,4 +55,19 @@ body {
     content: "|";
     display: inline-block;
     animation: blink 1s infinite;
+}
+
+/* Command Styling */
+.cmd {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Links Styling */
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
