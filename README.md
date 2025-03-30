@@ -35,5 +35,4 @@
 - 👯 I’m looking to collaborate in the FinTech space.
 - 🤔 I usually sleep when I get too bored.
 - 💬 I read about FinTech when I'm not bored.
-- 📫 How to reach me: isitsuryansham@gmail.com
--->
+- 📫 How to reach me: isitsuryansham@gmail.com or at https://www.linkedin.com/in/suryanshamtiwari
