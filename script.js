@@ -10,32 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const terminalInput = document.createElement("input");
     terminalInput.id = "terminal-input";
     terminalInput.type = "text";
-    terminalInput.placeholder = "Type a command...";
+    terminalInput.autofocus = true;  // Ensure input is active
     app.appendChild(terminalInput);
     
     terminalInput.focus();
 
-    // Handle user input
-    terminalInput.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            let inputValue = terminalInput.value.trim().toLowerCase();
-            terminalInput.value = "";
-
-            let response = interpretCommand(inputValue);
-            terminalOutput.innerHTML += `<p>> ${inputValue}</p><p>${response}</p>`;
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-        }
-    });
-
-    window.onload = function () {
+    // Fake boot-up animation
     const bootText = [
         "Initializing system...",
         "Loading user environment...",
         "Checking network connection...",
         "Welcome to Insuryance Terminal!"
     ];
-
-    const terminalOutput = document.getElementById("terminal-output");
 
     let index = 0;
     function showBootText() {
@@ -51,8 +37,19 @@ document.addEventListener("DOMContentLoaded", function() {
             terminalOutput.appendChild(welcomeLine);
         }
     }
-    showBootText();
-};
+    showBootText();  // Now it runs properly
+
+    // Handle user input
+    terminalInput.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            let inputValue = terminalInput.value.trim().toLowerCase();
+            terminalInput.value = "";
+
+            let response = interpretCommand(inputValue);
+            terminalOutput.innerHTML += `<p>> ${inputValue}</p><p>${response}</p>`;
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+    });
 
     function interpretCommand(command) {
         switch (command) {
@@ -61,15 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
             case "about":
                 return "Hi, I'm Suryansham, was tweaking with innovation at PhonePe before, currently the founder of FinLead AI.";
             case "portfolio":
-                return "I kinda have my portfolio spilled out in various spaces, places and domains. \n Check me out on Linkedin first! https://www.linkedin.com/in/suryanshamtiwari";
+                return "I kinda have my portfolio spilled out in various spaces, places and domains. \n Check me out on Linkedin first! <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
-                return "Email: isitsuryansham@gmail.com";
-            case "switch":
-                document.body.classList.toggle("normal-mode");
-                return "Switched to normal mode!";
-            default:
-                return "Command not recognized. Type 'help' for a list of commands.";
-        }
-    }
-});
-
+                return "Email: <a href='mailto:isitsuryansham@gmail
