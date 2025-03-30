@@ -1,31 +1,56 @@
-/* General Page Styles */
+/* Fullscreen Terminal */
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
-    color: #33ff33; /* Green text like a terminal */
+    color: #33ff33; /* Classic terminal green */
     font-family: 'Courier New', monospace;
     font-size: 16px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 /* Terminal Container */
 #app {
-    width: 100%;
-    height: 100vh;
-    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.3);
 }
 
-/* Input Styling */
+/* Terminal Output */
+#terminal-output {
+    width: 100%;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Command Input */
 #terminal-input {
     background: none;
     border: none;
     color: #33ff33;
     font-family: 'Courier New', monospace;
     font-size: 16px;
-    outline: none;
     width: 100%;
+    outline: none;
+    caret-color: #33ff33;
+}
+
+/* Cursor Blink Effect */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+#terminal-input::after {
+    content: "|";
+    display: inline-block;
+    animation: blink 1s infinite;
 }
