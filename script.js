@@ -1,71 +1,83 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const terminalOutput = document.getElementById("terminal-output");
-    const terminalInput = document.getElementById("terminal-input");
+    const app = document.getElementById("app");
+
+    // Create the terminal output container
+    const terminalOutput = document.createElement("div");
+    terminalOutput.id = "terminal-output";
+    app.appendChild(terminalOutput);
+
+    // Create the input field container
+    const inputContainer = document.createElement("div");
+    inputContainer.id = "terminal-input-container";
+    inputContainer.innerHTML = `<span>&gt; </span>`;
+
+    // Create the input field
+    const terminalInput = document.createElement("input");
+    terminalInput.id = "terminal-input";
+    terminalInput.type = "text";
+    terminalInput.autofocus = true;
+    inputContainer.appendChild(terminalInput);
+    app.appendChild(inputContainer);
     
-    function typeResponse(text, element, speed = 30) {
-        let index = 0;
-        function type() {
-            if (index < text.length) {
-                element.innerHTML += text[index];
-                index++;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-    
-    const bootMessages = [
+    terminalInput.focus();
+
+    // Fake boot-up animation
+    const bootText = [
         "Initializing system...",
         "Loading user environment...",
         "Checking network connection...",
-        "Welcome to Insuryance Terminal!"
+        "Welcome to Insuryance's Terminal!"
     ];
-    
-    let index = 0;
-    function showBootMessages() {
-        if (index < bootMessages.length) {
-            let line = document.createElement("p");
-            terminalOutput.appendChild(line);
-            typeResponse(bootMessages[index], line, 50);
-            index++;
-            setTimeout(showBootMessages, 700);
+
+    function showBootText(index = 0) {
+        if (index < bootText.length) {
+            typeResponse(bootText[index], () => showBootText(index + 1));
         } else {
-            let welcomeLine = document.createElement("p");
-            welcomeLine.innerHTML = "Type 'help' to get started.";
-            terminalOutput.appendChild(welcomeLine);
+            typeResponse("Type 'help' to get started.");
         }
     }
-    
-    showBootMessages();
-    
+    showBootText();
+
+    // Handle user input
     terminalInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
-            
-            let response = interpretCommand(inputValue);
-            let userInputLine = document.createElement("p");
-            userInputLine.innerHTML = `&gt; ${inputValue}`;
-            terminalOutput.appendChild(userInputLine);
-            
-            let responseLine = document.createElement("p");
-            terminalOutput.appendChild(responseLine);
-            typeResponse(response, responseLine, 20);
-            
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
+            if (inputValue) {
+                terminalOutput.innerHTML += `<p>&gt; ${inputValue}</p>`;
+                typeResponse(interpretCommand(inputValue));
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
         }
     });
-    
+
+    function typeResponse(text, callback) {
+        const responseElement = document.createElement("p");
+        responseElement.className = "typed-text";
+        terminalOutput.appendChild(responseElement);
+
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                responseElement.textContent += text[i];
+                i++;
+                setTimeout(type, 50);
+            } else if (callback) {
+                setTimeout(callback, 500);
+            }
+        }
+        type();
+    }
+
     function interpretCommand(command) {
         switch (command) {
             case "help":
-                return "Available commands: about, portfolio, projects, contact, switch";
+                return "Available commands: about, portfolio, contact, switch";
             case "about":
                 return "Hi, I'm Suryansham, was tweaking with innovation at PhonePe before, currently the founder of FinLead AI.";
             case "portfolio":
-                return "I kinda have my portfolio spilled out in various spaces, places and domains.\n Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>!";
-            case "projects":
-                return "Here are some projects: \n - Project 1: AI Fintech Analysis \n - Project 2: Blockchain Innovations";
+                return "I kinda have my portfolio spilled out in various spaces, places and domains. \n Check me out on Linkedin first! <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
                 return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
             case "switch":
