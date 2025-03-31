@@ -58,16 +58,20 @@ document.addEventListener("DOMContentLoaded", function() {
             case "help":
                 return "Available commands: about, portfolio, contact, switch";
             case "about":
-                return "Hi, I'm Suryansham, was tweaking with innovation at PhonePe before, currently the founder of FinLead AI.";
+                return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited.";
+                return " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life";
+                return " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere.";
             case "portfolio":
-                return "I kinda have my portfolio spilled out in various spaces, places and domains. \n Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
+                return " I kinda have my portfolio spilled out in various spaces, places and domains. I've made products both in the hardware and the software space";
+                return " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! "; 
+                return " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
                 return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
             case "switch":
                 document.body.classList.toggle("normal-mode");
                 return "Switched to normal mode!";
             default:
-                return "Command not recognized. Type 'help' for a list of commands.";
+                return "Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.";
         }
     }
 
