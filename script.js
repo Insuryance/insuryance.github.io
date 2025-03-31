@@ -56,20 +56,28 @@ document.addEventListener("DOMContentLoaded", function() {
     function interpretCommand(command) {
         switch (command) {
             case "help":
-                return "Available commands: about, portfolio, contact, switch";
+                return "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch";
             case "about":
-                return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited.";
-                + " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life";
+                return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited."
+                + " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life"
                 + " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere.";
             case "portfolio":
-                return " I kinda have my portfolio spilled out in various spaces, places and domains. I've made products both in the hardware and the software space";
-                + " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! "; 
+                return " I kinda have my portfolio spilled out in various spaces, places and domains. I've made products both in the hardware and the software space"
+                + " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! " 
                 + " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
                 return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
             case "switch":
                 document.body.classList.toggle("normal-mode");
                 return "Switched to normal mode!";
+            case "media_coverage":
+                return "<a href='https://www.northeasttoday.in/2022/04/09/tripura-suryansham-t-sonali-rastogi-from-nit-agartala-tops-in-hyundai-social-creator-awards-2021/' target='_blank'>NorthEastToday</a> "
+                + "<a href='https://tripuranet.com/tnet/hyundai-awards-two-nit-%E2%80%93agt-students-top-10-finalists-1871.html' target='_blank'>TripuraNet</a> "
+                + "<a href='https://www.theweek.in/wire-updates/business/2021/03/23/pwr1-hyundai-motor-india-foundation.html' target='_blank'>TheWeek</a> "
+                +"<a href='https://www.devdiscourse.com/article/education/1506202-hyundai-motor-india-foundation-announces-the-winner-of-h-social-creator-2020' target='_blank'>RandomMediaOutlet</a> "
+                + "<a href='https://www.businessworld.in/article/hyundai-motor-india-foundation-announces-winner-of-h-social-creator-2020-384562' target='_blank'>BusinessWorld</a> "
+                + "<a href='https://chennaiglitz.com/hyundai-motor-india-foundation-announces-the-winners-of-h-social-creator-2021/' target='_blank'>ChennaiGlitz</a> "
+                + "and More. ";
             default:
                 return "Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.";
         }
