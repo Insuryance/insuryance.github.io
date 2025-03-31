@@ -59,12 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 return "Available commands: about, portfolio, contact, switch";
             case "about":
                 return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited.";
-                return " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life";
-                return " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere.";
+                + " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life";
+                + " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere.";
             case "portfolio":
                 return " I kinda have my portfolio spilled out in various spaces, places and domains. I've made products both in the hardware and the software space";
-                return " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! "; 
-                return " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
+                + " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! "; 
+                + " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
                 return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
             case "switch":
