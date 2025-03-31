@@ -121,3 +121,25 @@ a:hover {
     border-right: 2px solid #33ff33;
     animation: typing 2s steps(30, end) forwards;
 }
+
+/* Autofocus Fix */
+#terminal-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+
+#terminal-container {
+    cursor: text;
+}
+
+/* Hide default input caret (we add our own) */
+#terminal-input {
+    caret-color: transparent;
+}
+
+/* Improve Prompt Visibility */
+.prompt {
+    color: #33ff33;
+    font-weight: bold;
+    margin-right: 5px;
+}
