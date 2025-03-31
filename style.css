@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0d0f15; /* Match kavin.me background */
+    background-color: #0d1117; /* Adjusted to match kavin.me */
     color: #9ece6a; /* Adjusted green text */
     font-family: 'Fira Code', monospace;
     font-size: 16px;
@@ -23,16 +23,22 @@ body {
     height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Center the terminal */
-    text-align: center;  /* Align text */
+    justify-content: center;
+    text-align: center;
 }
 
 /* Terminal Output */
 #terminal-output {
     width: 100%;
-    text-align: left;  /* Left-align text inside */
+    text-align: left;
     font-size: 18px;
     line-height: 1.5;
+}
+
+/* Make "insuryance:$ type help to start" Bigger */
+#terminal-output p:first-child {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 /* Terminal Input */
@@ -44,9 +50,10 @@ body {
 }
 
 .prompt {
-    color: #d19a66; /* Orange-brown prompt */
+    color: #d19a66;
     font-weight: bold;
     margin-right: 10px;
+    font-size: 18px; /* Adjust prompt size */
 }
 
 #terminal-input {
@@ -80,7 +87,7 @@ body {
 
 /* Links Styling */
 a {
-    color: #7aa2f7; /* Light blue links */
+    color: #7aa2f7;
     text-decoration: none;
     font-weight: bold;
 }
