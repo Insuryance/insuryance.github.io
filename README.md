@@ -30,9 +30,9 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-- 🔭 I’m Suryansham. 
-- 🌱 I’m currently connecting the FinTech with the AI horizon.
-- 👯 I’m looking to collaborate in the FinTech space.
+- 🔭 I’m Surya.
+- 🌱 I’m currently connecting the FinTech dots with the AI horizon.
+- 👯 I’m usually looking to collaborate in the FinTech space. You can just google about me. You might find a few articles as well.
 - 🤔 I usually sleep when I get too bored.
-- 💬 I read about FinTech when I'm not bored.
+- 💬 I read about FinTech when I'm not bored. I carry innovation as a forte, which I think a lot of people lack in the modern world.
 - 📫 How to reach me: isitsuryansham@gmail.com or at https://www.linkedin.com/in/suryanshamtiwari
