@@ -1,90 +1,47 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const app = document.getElementById("app");
+document.addEventListener("DOMContentLoaded", function () {
+    const terminalOutput = document.getElementById("terminal-output");
+    const terminalInput = document.getElementById("terminal-input");
 
-    // Create the terminal output container
-    const terminalOutput = document.createElement("div");
-    terminalOutput.id = "terminal-output";
-    app.appendChild(terminalOutput);
+    const commands = {
+        help: "Available commands: <br><span class='cmd'>about</span> - About Me <br><span class='cmd'>projects</span> - My Projects <br><span class='cmd'>contact</span> - Contact Info <br><span class='cmd'>clear</span> - Clear Terminal",
+        about: "Hi, I'm [Your Name], a passionate developer building cool projects.",
+        projects: "1. Portfolio Website<br>2. JavaScript Terminal<br>3. Other cool stuff",
+        contact: "Email: your@email.com<br>GitHub: github.com/yourprofile",
+        clear: function () {
+            terminalOutput.innerHTML = "";
+        },
+    };
 
-    // Create the input field container
-    const inputContainer = document.createElement("div");
-    inputContainer.id = "terminal-input-container";
-    inputContainer.innerHTML = `<span>&gt; </span>`;
+    function executeCommand(input) {
+        const command = input.toLowerCase().trim();
+        if (command === "") return;
 
-    // Create the input field
-    const terminalInput = document.createElement("input");
-    terminalInput.id = "terminal-input";
-    terminalInput.type = "text";
-    terminalInput.autofocus = true;
-    inputContainer.appendChild(terminalInput);
-    app.appendChild(inputContainer);
-    
-    terminalInput.focus();
+        const userInputHtml = `<div class="command-line"><span class="prompt">></span> ${command}</div>`;
+        terminalOutput.innerHTML += userInputHtml;
 
-    // Fake boot-up animation
-    const bootText = [
-        "Initializing system...",
-        "Loading user environment...",
-        "Checking network connection...",
-        "Welcome to Insuryance's Terminal!"
-    ];
-
-    function showBootText(index = 0) {
-        if (index < bootText.length) {
-            typeResponse(bootText[index], () => showBootText(index + 1));
-        } else {
-            typeResponse("Type 'help' to get started.");
-        }
-    }
-    showBootText();
-
-    // Handle user input
-    terminalInput.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            let inputValue = terminalInput.value.trim().toLowerCase();
-            terminalInput.value = "";
-
-            if (inputValue) {
-                terminalOutput.innerHTML += `<p>&gt; ${inputValue}</p>`;
-                typeResponse(interpretCommand(inputValue));
-                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        if (commands[command]) {
+            if (typeof commands[command] === "function") {
+                commands[command](); // Run function (for clear)
+            } else {
+                terminalOutput.innerHTML += `<div class="response">${commands[command]}</div>`;
             }
+        } else {
+            terminalOutput.innerHTML += `<div class="error">Command not found. Type 'help' for a list of commands.</div>`;
+        }
+
+        terminalOutput.scrollTop = terminalOutput.scrollHeight; // Auto-scroll
+    }
+
+    terminalInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            executeCommand(terminalInput.value);
+            terminalInput.value = ""; // Clear input
         }
     });
 
-    function typeResponse(text, callback) {
-        const responseElement = document.createElement("p");
-        responseElement.className = "typed-text";
-        terminalOutput.appendChild(responseElement);
-
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                responseElement.textContent += text[i];
-                i++;
-                setTimeout(type, 50);
-            } else if (callback) {
-                setTimeout(callback, 500);
-            }
-        }
-        type();
-    }
-
-    function interpretCommand(command) {
-        switch (command) {
-            case "help":
-                return "Available commands: about, portfolio, contact, switch";
-            case "about":
-                return "Hi, I'm Suryansham, was tweaking with innovation at PhonePe before, currently the founder of FinLead AI.";
-            case "portfolio":
-                return "I kinda have my portfolio spilled out in various spaces, places and domains. \n Check me out on Linkedin first! <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
-            case "contact":
-                return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
-            case "switch":
-                document.body.classList.toggle("normal-mode");
-                return "Switched to normal mode!";
-            default:
-                return "Command not recognized. Type 'help' for a list of commands.";
-        }
-    }
+    // Auto-focus on terminal input
+    document.addEventListener("click", function () {
+        terminalInput.focus();
+    });
 });
