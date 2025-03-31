@@ -5,8 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #33ff33; /* Classic terminal green */
+    background-color: #0d0f15; /* Match kavin.me background */
+    color: #9ece6a; /* Adjusted green text */
     font-family: 'Fira Code', monospace;
     font-size: 16px;
     height: 100vh;
@@ -18,60 +18,48 @@ body {
 
 /* Terminal Container */
 #app {
-    width: 80%;
-    max-width: 900px;
-    height: 90vh;
+    width: 60%;
+    max-width: 800px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(51, 255, 51, 0.4);
-    animation: fadeIn 1s ease-in-out;
+    justify-content: center;  /* Center the terminal */
+    text-align: center;  /* Align text */
 }
 
 /* Terminal Output */
 #terminal-output {
     width: 100%;
-    overflow-y: auto;
-    flex-grow: 1;
+    text-align: left;  /* Left-align text inside */
+    font-size: 18px;
     line-height: 1.5;
-    min-height: 300px;
-    scroll-behavior: smooth;
 }
 
-/* Command Input */
-#input-container {
+/* Terminal Input */
+#terminal-input-container {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 18px;
-    color: #33ff33;
-    padding-top: 10px;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .prompt {
-    color: #33ff33;
+    color: #d19a66; /* Orange-brown prompt */
     font-weight: bold;
+    margin-right: 10px;
 }
 
 #terminal-input {
     background: none;
     border: none;
-    color: #33ff33;
+    color: #9ece6a;
     font-family: 'Fira Code', monospace;
-    font-size: 16px;
-    width: 100%;
+    font-size: 18px;
+    width: 70%;
     outline: none;
-    caret-color: #33ff33;
+    caret-color: #9ece6a;
     padding: 5px;
     text-align: left;
-    transition: box-shadow 0.3s ease-in-out;
-}
-#terminal-input:focus {
-    box-shadow: 0 0 10px #33ff33;
 }
 
 /* Cursor Blink Effect */
@@ -88,18 +76,15 @@ body {
 .cmd {
     color: #ffcc00;
     font-weight: bold;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
 }
 
 /* Links Styling */
 a {
-    color: #00aaff;
+    color: #7aa2f7; /* Light blue links */
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
 }
 a:hover {
-    color: #ffcc00;
     text-decoration: underline;
 }
 
@@ -109,37 +94,27 @@ a:hover {
     to { opacity: 1; }
 }
 
-/* Typing animation for responses */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-.typed-text {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #33ff33;
-    animation: typing 2s steps(30, end) forwards;
+/* Normal Mode */
+body.normal-mode {
+    background-color: #ffffff;
+    color: #333;
+    font-family: Arial, sans-serif;
+    display: block;
+    padding: 20px;
 }
 
-/* Autofocus Fix */
-#terminal-input:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+/* Hide terminal in normal mode */
+body.normal-mode #app {
+    display: none;
 }
 
-#terminal-container {
-    cursor: text;
+/* Normal mode content */
+#normal-content {
+    display: none;
+    text-align: center;
+    padding: 50px;
 }
 
-/* Hide default input caret (we add our own) */
-#terminal-input {
-    caret-color: transparent;
-}
-
-/* Improve Prompt Visibility */
-.prompt {
-    color: #33ff33;
-    font-weight: bold;
-    margin-right: 5px;
+body.normal-mode #normal-content {
+    display: block;
 }
