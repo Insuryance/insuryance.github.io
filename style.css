@@ -1,9 +1,12 @@
+/* Import Fira Code font */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+
 /* Fullscreen Terminal Styling */
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
-    color: #33ff33;
+    color: #33ff33; /* Classic terminal green */
     font-family: 'Fira Code', monospace;
     font-size: 16px;
     height: 100vh;
@@ -40,12 +43,18 @@ body {
 }
 
 /* Command Input */
-#terminal-input-container {
+#input-container {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 18px;
     color: #33ff33;
+    padding-top: 10px;
+}
+
+.prompt {
+    color: #33ff33;
+    font-weight: bold;
 }
 
 #terminal-input {
