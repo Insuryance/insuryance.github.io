@@ -48,7 +48,7 @@ body {
 .fall {
     display: inline-block;
     position: relative;
-    animation: fallDown 1.5s ease-in-out forwards;
+    animation: fallDown 2.5s ease-in-out forwards;
 }
 
 @keyframes fallDown {
@@ -60,7 +60,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out;
-    transform: translateX(-20px); /* Adjusted for closer position */
+    transform: translateX(-40px); /* Adjusted for closer position */
 }
 
 /* Terminal Output */
