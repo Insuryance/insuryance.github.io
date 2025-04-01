@@ -57,11 +57,6 @@ body {
     transition: transform 1s ease-in-out;
 }
 
-/* Hide Surya's Terminal until Insuryance disappears */
-.surya {
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-}
 
 /* Terminal Output */
 #terminal-output {
