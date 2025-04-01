@@ -65,31 +65,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Falling animation for InSuryance letters
     setTimeout(() => {
-        // Drop "I, n, n, c, e"
-        document.querySelectorAll(".fall").forEach((letter) => {
-            letter.style.animation = "fallDown 1s ease-out forwards";
-        });
-
-        // Move "'s" closer to "Surya"
-        document.querySelector(".stay").style.transition =
-            "transform 1s ease-in-out";
-        document.querySelector(".stay").style.transform =
-            "translateX(-65px)";
-
-        // Ensure smooth transition for final text
         setTimeout(() => {
-            document.querySelector(".stay").style.opacity = "1"; // Final adjustment
-        }, 1000);
-    }, 4000);
+            document.querySelectorAll(".fall").forEach((letter) => {
+                letter.style.animation = "fallDown 1s ease-out forwards";
+            });
 
-    // Function to display boot text
-    function displayBootText() {
-        bootText.forEach(line => {
-            let bootLine = document.createElement("p");
-            bootLine.innerHTML = line;
-            terminalOutput.appendChild(bootLine);
-        });
-    }
+            // Move "'s" closer to "Surya"
+            document.querySelector(".stay").style.transition =
+                "transform 1s ease-in-out";
+            document.querySelector(".stay").style.transform =
+                "translateX(-50px)";
+
+            // Ensure smooth transition for final text
+            setTimeout(() => {
+                document.querySelector(".stay").style.opacity = "1"; // Final adjustment
+            }, 1000);
+        }, 2000); // Wait 2 seconds before starting the falling animation
+    }, 2000); // Wait 2 seconds before starting the whole thing
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
@@ -97,16 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
 
-            if (inputValue === "clear") {
-                terminalOutput.innerHTML = ""; // Clear terminal output
-                displayBootText();
-                return;
-            }
-
             let response = interpretCommand(inputValue);
-            const newLine = document.createElement('p'); // Create a new paragraph element
-            newLine.innerHTML = response; // Set its inner HTML to the response
-            terminalOutput.appendChild(newLine); // Append the new paragraph to the terminal output
+            const newLine = document.createElement('p');
+            newLine.innerHTML = response;
+            terminalOutput.appendChild(newLine);
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });
