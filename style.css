@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0d1117; /* Adjusted to match kavin.me */
+    background-color: #1e1e2e; /* Adjusted to match kavin.me */
     color: #9ece6a; /* Adjusted green text */
     font-family: 'Fira Code', monospace;
     font-size: 16px;
@@ -25,6 +25,16 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+/* Terminal Title */
+#terminal-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #9ece6a;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: opacity 0.5s ease-out;
 }
 
 /* Terminal Output */
@@ -99,6 +109,12 @@ a:hover {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Fade-out effect for letters */
+.fade-out {
+    display: inline-block;
+    transition: opacity 0.5s ease-out;
 }
 
 /* Normal Mode */
