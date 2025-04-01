@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     terminalTitle.innerHTML = `
         <span class="fall">I</span>
         <span class="fall">n</span>
-        <span class="fall">s</span>
-        <span class="fall">u</span>
-        <span class="fall">r</span>
-        <span class="fall">a</span>
         <span class="fall">n</span>
         <span class="fall">c</span>
         <span class="fall">e</span>
