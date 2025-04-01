@@ -67,27 +67,32 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         // Drop "I, n, n, c, e"
         document.querySelectorAll(".fall").forEach((letter) => {
-            letter.style.animation = "fallDown 5s ease-out forwards";
+            letter.style.animation = "fallDown 1s ease-out forwards";
         });
 
         // Move "'s" closer to "Surya"
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(-150px)";
-        
+            "translateX(-30px)"; // Reduced distance for closer alignment
+
         // Ensure smooth transition for final text
         setTimeout(() => {
             document.querySelector(".stay").style.opacity = "1"; // Final adjustment
         }, 1000);
         
-    }, 3000);
+    }, 4000); // Delay increased to 4 seconds
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
+
+            if (inputValue === "clear") {
+                clearTerminal(); // Clear screen functionality
+                return;
+            }
 
             let response = interpretCommand(inputValue);
             terminalOutput.innerHTML += `<p>> ${inputValue}</p><p>${response}</p>`;
@@ -156,7 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
         }
     }
-
+ function clearTerminal() {
+        terminalOutput.innerHTML = ""; // Clear all output content
+    }
     function switchToNormalMode() {
         document.body.classList.add("normal-mode");
     }
