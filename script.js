@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <span class="fall">c</span>
         <span class="fall">e</span>
         <span class="stay">'s </span>
-        <span class="surya">Surya</span>'s Terminal
+        <span class="hidden surya">Surya</span>'s Terminal
     `;
     app.appendChild(terminalTitle);
 
@@ -71,9 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Show "Surya" after Insuryance drops
         setTimeout(() => {
-            document.querySelector(".surya").style.opacity = "1";
+            document.querySelector(".surya").classList.remove("hidden");
         }, 1000);
-        
     }, 3000);
 
     // Handle user input
