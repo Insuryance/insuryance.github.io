@@ -18,13 +18,14 @@ body {
 
 /* Terminal Container */
 #app {
-    width: 80%; /* Expanded width */
-    max-width: 1000px; /* Expanded max-width */
-    height: 90vh; /* Expanded height */
+    width: 80%;
+    max-width: 1000px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    overflow: hidden;  /* Prevent content from stretching beyond container */
 }
 
 /* Terminal Title */
@@ -48,7 +49,7 @@ body {
 .fall {
     display: inline-block;
     position: relative;
-    animation: fallDown 2.5s ease-in-out forwards;
+    animation: fallDown 1.5s ease-in-out forwards;
 }
 
 @keyframes fallDown {
@@ -60,7 +61,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out;
-    transform: translateX(200px); /* Adjusted for closer position */
+    transform: translateX(-30px);
 }
 
 /* Terminal Output */
@@ -80,11 +81,15 @@ body {
     display: none;
 }
 
-
 /* Make "insuryance:$ type help to start" Bigger */
 #terminal-output p:first-child {
     font-size: 22px;
     font-weight: bold;
+}
+
+#terminal-output p {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
 /* Terminal Input */
