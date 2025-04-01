@@ -91,7 +91,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function interpretCommand(command) {
         switch (command) {
             case "help":
-                return "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch";
+                return "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch"
+                + "Use clear command to clear the screen";
             case "about":
                 return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited. <br>"
                 + " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life. <br>"
