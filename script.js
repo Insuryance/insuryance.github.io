@@ -67,14 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         // Drop "I, n, n, c, e"
         document.querySelectorAll(".fall").forEach((letter) => {
-            letter.style.animation = "fallDown 1s ease-out forwards";
+            letter.style.animation = "fallDown 5s ease-out forwards";
         });
 
         // Move "'s" closer to "Surya"
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(-50px)";
+            "translateX(-150px)";
         
         // Ensure smooth transition for final text
         setTimeout(() => {
