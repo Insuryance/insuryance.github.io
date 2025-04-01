@@ -34,7 +34,19 @@ body {
     color: #9ece6a;
     text-align: center;
     margin-bottom: 10px;
-    transition: opacity 0.5s ease-out;
+}
+
+/* Extra letters that will fall */
+.fall {
+    display: inline-block;
+    position: relative;
+    animation: fallDown 1s ease-out forwards;
+}
+
+/* Falling animation */
+@keyframes fallDown {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(50px); opacity: 0; }
 }
 
 /* Terminal Output */
@@ -103,18 +115,6 @@ a {
 }
 a:hover {
     text-decoration: underline;
-}
-
-/* Fade-in effect */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Fade-out effect for letters */
-.fade-out {
-    display: inline-block;
-    transition: opacity 0.5s ease-out;
 }
 
 /* Normal Mode */
