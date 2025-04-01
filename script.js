@@ -120,3 +120,29 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add("normal-mode");
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const titleElement = document.createElement("h1");
+    titleElement.id = "terminal-title";
+    titleElement.innerHTML = `
+        <span class="fall">I</span>
+        <span class="fall">n</span>
+        <span>Surya's Terminal</span>
+        <span class="fall">u</span>
+        <span class="fall">r</span>
+        <span class="fall">y</span>
+        <span class="fall">a</span>
+        <span class="fall">n</span>
+        <span class="fall">c</span>
+        <span class="fall">e</span>
+        <span class="fall">'</span>
+    `;
+    
+    document.body.prepend(titleElement);
+    
+    setTimeout(() => {
+        document.querySelectorAll(".fall").forEach(letter => {
+            letter.style.animation = "fallDown 1s ease-out forwards";
+        });
+    }, 1000);
+});
+
