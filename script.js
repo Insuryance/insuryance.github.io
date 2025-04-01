@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(-30px)";
+            "translateX(-65px)";
 
         // Ensure smooth transition for final text
         setTimeout(() => {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });
-
+    
     function interpretCommand(command) {
         switch (command) {
             case "help":
