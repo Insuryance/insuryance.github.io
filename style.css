@@ -5,8 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #1e1e2e; /* Adjusted to match kavin.me */
-    color: #9ece6a; /* Adjusted green text */
+    background-color: #1e1e2e;
+    color: #9ece6a;
     font-family: 'Fira Code', monospace;
     font-size: 16px;
     height: 100vh;
@@ -48,8 +48,8 @@ body {
     100% { transform: translateY(50px); opacity: 0; }
 }
 
-/* Fade-in animation for "Surya's Terminal" */
-.fade-in {
+/* Hide Surya's Terminal until Insuryance disappears */
+.surya {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -83,7 +83,7 @@ body {
     color: #d19a66;
     font-weight: bold;
     margin-right: 10px;
-    font-size: 18px; /* Adjust prompt size */
+    font-size: 18px;
 }
 
 #terminal-input {
@@ -104,22 +104,6 @@ body {
     border-bottom: 2px solid #9ece6a;
 }
 
-/* Command Styling */
-.cmd {
-    color: #ffcc00;
-    font-weight: bold;
-}
-
-/* Links Styling */
-a {
-    color: #7aa2f7;
-    text-decoration: none;
-    font-weight: bold;
-}
-a:hover {
-    text-decoration: underline;
-}
-
 /* Normal Mode */
 body.normal-mode {
     background-color: #ffffff;
@@ -132,15 +116,4 @@ body.normal-mode {
 /* Hide terminal in normal mode */
 body.normal-mode #app {
     display: none;
-}
-
-/* Normal mode content */
-#normal-content {
-    display: none;
-    text-align: center;
-    padding: 50px;
-}
-
-body.normal-mode #normal-content {
-    display: block;
 }
