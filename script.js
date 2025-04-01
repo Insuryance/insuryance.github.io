@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 + " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! <br>" 
                 + " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
-                return "Email: <a href='mailto:isitsuryansham@gmail.com'>isitsuryansham@gmail.com</a>";
+                return "Email: <a href='mailto:insuryance@gmail.com'>insuryance@gmail.com</a>";
             case "switch":
                 document.body.classList.toggle("normal-mode");
                 return "Switched to normal mode!";
@@ -78,6 +78,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 + "<a href='https://www.businessworld.in/article/hyundai-motor-india-foundation-announces-winner-of-h-social-creator-2020-384562' target='_blank'>BusinessWorld</a> <br> "
                 + "<a href='https://chennaiglitz.com/hyundai-motor-india-foundation-announces-the-winners-of-h-social-creator-2021/' target='_blank'>ChennaiGlitz</a> "
                 + "and More. ";
+            case "hackathons":
+                return "Let's check the winning ones!"
+                + " It all started when I came third in the first year of my college in an inter-year coding hackathon where we made an advanced email scrapper <br>"
+                + " Post that, Hyundai's HSC Cup, x2 (one finalist, one regional winner). <br>"
+                + " TechGIUM, International Finalist and Regional Winner for developing curved solar panels with 21.7% higher efficiency. <br>"
+                + " UiPath's Automathon Winner for developing automatic air-pollution detection architecture using smog density and socio-activity of birds. <br>"
+                + " Winner Observer Research Foundation and Unleash Global Hackathon for developing rural vayurakshak concept to reduce air pollution. <br>"
+                + " Winner Oxford University's Global Hackathon for XR based solution to reduce collateral damanges of fast floods. <br>"
+                + " Huawei AI Award Winner by MLH and McHacks and the list continues..... <br>";
+            case "patents":
+                return "Now, I by choice preferred Mechanical Engineering and therefore has a few simple patents out there. <br>"
+                + " I prefer making simple hardware which is innovative and ergonomical. <br>"
+                + " Patent 1 : Tool For Extraction/Scrapping Of shellac from a bark. Tool For Extraction/Scrapping Of shellac from a bark. <br>"
+                + " Patent Number: 202211031547 <br>"
+                + "Patent Number: 202211013032 <br>"
+                + "Patent Number: 202211013031 <br>"
+                + "Stay tuned for more such patents";
+            case "blogs":
+                return "Under Development";
             default:
                 return "Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.";
         }
