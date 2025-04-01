@@ -48,6 +48,12 @@ body {
     100% { transform: translateY(50px); opacity: 0; }
 }
 
+/* Fade-in animation for "Surya's Terminal" */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 /* Terminal Output */
 #terminal-output {
     width: 100%;
@@ -91,6 +97,11 @@ body {
     caret-color: #9ece6a;
     padding: 5px;
     text-align: left;
+}
+
+/* Input field focus effect */
+#terminal-input:focus {
+    border-bottom: 2px solid #9ece6a;
 }
 
 /* Command Styling */
