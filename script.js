@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const app = document.getElementById("app");
-    
+
+    // Create Title (Insuryance's Terminal → Surya's Terminal)
+    const terminalTitle = document.createElement("h1");
+    terminalTitle.id = "terminal-title";
+    terminalTitle.innerHTML = "Insuryance<span class='fade-out'>'</span>s Terminal";
+    app.appendChild(terminalTitle);
+
     // Create the terminal output container
     const terminalOutput = document.createElement("div");
     terminalOutput.id = "terminal-output";
@@ -10,21 +16,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
     terminalInputContainer.innerHTML = "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
-    
+
     // Create the input field
     const terminalInput = document.createElement("input");
     terminalInput.id = "terminal-input";
     terminalInput.type = "text";
-    terminalInput.autofocus = true;  // Ensure input is active
-    
+    terminalInput.autofocus = true;
+
     terminalInputContainer.appendChild(terminalInput);
     app.appendChild(terminalInputContainer);
-    
+
     terminalInput.focus();
 
     // Boot-up welcome text
     const bootText = [
-        "insuryance:$ type help to start", 
+        "insuryance:$ type help to start",
         "<a href='#' onclick='switchToNormalMode()'>Visit Normal website</a>",
         ""
     ];
@@ -40,6 +46,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     showBootText();
+
+    // Remove extra letters after 1 second
+    setTimeout(() => {
+        terminalTitle.innerHTML = `<span class="fade-out">In</span><span class="fade-out">uryance'</span>Surya's Terminal`;
+        document.querySelectorAll(".fade-out").forEach(el => {
+            setTimeout(() => el.style.opacity = "0", 200);
+        });
+    }, 1000);
 
     // Handle user input
     terminalInput.addEventListener("keydown", function(event) {
