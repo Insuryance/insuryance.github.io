@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const app = document.getElementById("app");
 
     // Create Title (Insuryance's Terminal → Surya's Terminal)
@@ -10,26 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="fall">s</span>
         <span class="fall">u</span>
         <span class="fall">r</span>
-        <span class="fall">y</span>
         <span class="fall">a</span>
         <span class="fall">n</span>
         <span class="fall">c</span>
         <span class="fall">e</span>
-        <span class="fall">'</span>
-        <span class="fade-in">Surya's Terminal</span>
+        <span class="stay">'s </span>
+        <span class="surya">Surya</span>'s Terminal
     `;
     app.appendChild(terminalTitle);
 
-    // Terminal output container
+    // Create the terminal output container
     const terminalOutput = document.createElement("div");
     terminalOutput.id = "terminal-output";
     app.appendChild(terminalOutput);
 
-    // Terminal input field
+    // Create the input field container
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
     terminalInputContainer.innerHTML = "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
 
+    // Create the input field
     const terminalInput = document.createElement("input");
     terminalInput.id = "terminal-input";
     terminalInput.type = "text";
@@ -37,16 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     terminalInputContainer.appendChild(terminalInput);
     app.appendChild(terminalInputContainer);
+
     terminalInput.focus();
 
-    // Boot-up text (removes the first ">" from appearing)
+    // Boot-up welcome text
     const bootText = [
         "insuryance:$ type help to start",
         "<a href='#' onclick='switchToNormalMode()'>Visit Normal website</a>",
         ""
     ];
-    let index = 0;
 
+    let index = 0;
     function showBootText() {
         if (index < bootText.length) {
             let bootLine = document.createElement("p");
@@ -58,36 +59,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     showBootText();
 
-    // Animate raindrop effect in 3 seconds
+    // Falling animation for Insuryance letters
     setTimeout(() => {
-        document.querySelectorAll(".fall").forEach((letter, i) => {
-            setTimeout(() => {
-                letter.style.animation = "fallDown 0.5s ease-out forwards";
-            }, i * 150); // Each letter falls at a slight delay
+        document.querySelectorAll(".fall").forEach(letter => {
+            letter.style.animation = "fallDown 1s ease-out forwards";
         });
 
+        // Move "'s" closer to "Surya"
+        document.querySelector(".stay").style.transition = "transform 1s ease-in-out";
+        document.querySelector(".stay").style.transform = "translateX(-50px)";
+
+        // Show "Surya" after Insuryance drops
         setTimeout(() => {
-            document.querySelector(".fade-in").style.opacity = "1";
-        }, 1500); // Delay the reveal of "Surya's Terminal"
-    }, 1000);
+            document.querySelector(".surya").style.opacity = "1";
+        }, 1000);
+        
+    }, 3000);
 
     // Handle user input
-    terminalInput.addEventListener("keydown", function (event) {
+    terminalInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
-
-            if (inputValue === "clear") {
-                terminalOutput.innerHTML = "";
-                return;
-            }
 
             let response = interpretCommand(inputValue);
             terminalOutput.innerHTML += `<p>> ${inputValue}</p><p>${response}</p>`;
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });
-
+    
     function interpretCommand(command) {
         switch (command) {
             case "help":
