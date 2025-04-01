@@ -125,10 +125,9 @@ document.addEventListener("DOMContentLoaded", function() {
             case "patents":
                 return "Now, I by choice preferred Mechanical Engineering and therefore has a few simple patents out there. <br>"
                 + " I prefer making simple hardware which is innovative and ergonomical. <br>"
-                + " Patent 1 : Tool For Extraction/Scrapping Of shellac from a bark. Tool For Extraction/Scrapping Of shellac from a bark. <br>"
-                + " Patent Number: 202211031547 <br>"
-                + " Patent Number: 202211013032 <br>"
-                + " Patent Number: 202211013031 <br>"
+                + " Patent Number 1: 202211031547 <br>"
+                + " Patent Number 2: 202211013032 <br>"
+                + " Patent Number 3: 202211013031 <br>"
                 + " Stay tuned for more such patents";
             case "blogs":
                 return "Under Development";
