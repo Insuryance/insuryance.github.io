@@ -1,19 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
 
     // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
     terminalTitle.innerHTML = `
-        <span class="fall">I</span>
-        <span class="fall">n</span>
-        <span class="fall">S</span>
-        <span class="fall">u</span>
-        <span class="fall">r</span>
-        <span class="fall">y</span>
-        <span class="fall">a</span>
-        <span class="stay">'s </span>
-        <span class="hidden surya">Surya</span>'s Terminal
+        <span class="fall-container">
+            <span class="fall">I</span>
+            <span class="fall">n</span>
+            <span>S</span>
+            <span>u</span>
+            <span>r</span>
+            <span>y</span>
+            <span>a</span>
+            <span class="fall">n</span>
+            <span class="fall">c</span>
+            <span class="fall">e</span>
+        </span>
+        <span class="stay">'s Terminal</span>
     `;
     app.appendChild(terminalTitle);
 
@@ -25,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create the input field container
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
-    terminalInputContainer.innerHTML = "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
+    terminalInputContainer.innerHTML =
+        "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
 
     // Create the input field
     const terminalInput = document.createElement("input");
@@ -42,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const bootText = [
         "insuryance:$ type help to start",
         "<a href='#' onclick='switchToNormalMode()'>Visit Normal website</a>",
-        ""
+        "",
     ];
 
     let index = 0;
@@ -55,29 +60,31 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(showBootText, 700);
         }
     }
-    
+
     showBootText();
 
     // Falling animation for InSuryance letters
     setTimeout(() => {
-        document.querySelectorAll(".fall").forEach(letter => {
+        // Drop "I, n, n, c, e"
+        document.querySelectorAll(".fall").forEach((letter) => {
             letter.style.animation = "fallDown 1s ease-out forwards";
         });
 
         // Move "'s" closer to "Surya"
-        document.querySelector(".stay").style.transition = "transform 1s ease-in-out";
-        document.querySelector(".stay").style.transform = "translateX(-50px)";
-
-        // Show "Surya" after InSuryance drops
+        document.querySelector(".stay").style.transition =
+            "transform 1s ease-in-out";
+        document.querySelector(".stay").style.transform =
+            "translateX(-50px)";
+        
+        // Ensure smooth transition for final text
         setTimeout(() => {
-            document.querySelector(".surya").classList.remove("hidden");
-            document.querySelector(".surya").style.animation = "fadeIn 1s ease-in forwards"; // Add fade-in effect for Surya
+            document.querySelector(".stay").style.opacity = "1"; // Final adjustment
         }, 1000);
         
     }, 3000);
 
     // Handle user input
-    terminalInput.addEventListener("keydown", function(event) {
+    terminalInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
@@ -87,6 +94,29 @@ document.addEventListener("DOMContentLoaded", function() {
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });
+
+    function interpretCommand(command) {
+        switch (command) {
+            case "help":
+                return (
+                    "Available commands: about, blogs, switch <br>" +
+                    "Use clear command to clear the screen <br>"
+                );
+            case "about":
+                return (
+                    "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited. <br>"
+                );
+            case "blogs":
+                return "Under Development";
+            default:
+                return "Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.";
+        }
+    }
+
+    function switchToNormalMode() {
+        document.body.classList.add("normal-mode");
+    }
+});
     
     function interpretCommand(command) {
         switch (command) {
