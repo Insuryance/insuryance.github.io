@@ -36,30 +36,31 @@ body {
     margin-bottom: 10px;
     white-space: nowrap;
     overflow: hidden;
-}
-
-/* Extra letters that will fall */
-.fall {
-    display: inline-block;
     position: relative;
 }
 
-/* Falling animation */
+/* Falling animation for specific letters */
+.fall {
+    display: inline-block;
+    position: relative;
+    animation: fallDown 1.5s ease-in-out forwards;
+}
+
 @keyframes fallDown {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(50px); opacity: 0; }
-}
-
-/* Hide Surya's Terminal until Insuryance disappears */
-.surya {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 /* Move "'s" closer to Surya */
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out;
+}
+
+/* Hide Surya's Terminal until Insuryance disappears */
+.surya {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 /* Terminal Output */
@@ -107,9 +108,9 @@ body {
     text-align: left;
 }
 
-/* Input field focus effect */
+/* Remove underline when typing commands */
 #terminal-input:focus {
-    border-bottom: 2px solid #9ece6a;
+    border-bottom: none;
 }
 
 /* Normal Mode */
@@ -124,4 +125,14 @@ body.normal-mode {
 /* Hide terminal in normal mode */
 body.normal-mode #app {
     display: none;
+}
+
+/* Visit Normal Website Link */
+#visit-normal {
+    color: #7aa2f7;
+    text-decoration: none;
+}
+
+#visit-normal:hover {
+    text-decoration: underline;
 }
