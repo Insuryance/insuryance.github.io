@@ -60,7 +60,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out;
-    transform: translateX(-40px); /* Adjusted for closer position */
+    transform: translateX(140px); /* Adjusted for closer position */
 }
 
 /* Terminal Output */
