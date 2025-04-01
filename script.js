@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(200px)";
+            "translateX(-30px)";
 
         // Ensure smooth transition for final text
         setTimeout(() => {
@@ -98,13 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
             terminalInput.value = "";
 
             if (inputValue === "clear") {
-                terminalOutput.innerHTML = "";  // Clear the terminal
-                displayBootText(); // Display boot text after clearing
+                terminalOutput.innerHTML = ""; // Clear terminal output
+                displayBootText();
                 return;
             }
 
             let response = interpretCommand(inputValue);
-            terminalOutput.innerHTML += `<p>> ${inputValue}</p><p>${response}</p>`;
+            const newLine = document.createElement('p'); // Create a new paragraph element
+            newLine.innerHTML = response; // Set its inner HTML to the response
+            terminalOutput.appendChild(newLine); // Append the new paragraph to the terminal output
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
     });
