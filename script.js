@@ -74,14 +74,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(-30px)"; // Reduced distance for closer alignment
+            "translateX(-30px)";
 
         // Ensure smooth transition for final text
         setTimeout(() => {
             document.querySelector(".stay").style.opacity = "1"; // Final adjustment
         }, 1000);
-        
-    }, 4000); // Delay increased to 4 seconds
+    }, 4000);
+
+    // Function to display boot text
+    function displayBootText() {
+        bootText.forEach(line => {
+            let bootLine = document.createElement("p");
+            bootLine.innerHTML = line;
+            terminalOutput.appendChild(bootLine);
+        });
+    }
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
@@ -90,7 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
             terminalInput.value = "";
 
             if (inputValue === "clear") {
-                clearTerminal(); // Clear screen functionality
+                terminalOutput.innerHTML = "";  // Clear the terminal
+                displayBootText(); // Display boot text after clearing
                 return;
             }
 
@@ -104,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (command) {
             case "help":
                 return (
-                    "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch <br>" +
-                    "Use clear command to clear the screen <br>"
+                    "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch, clear <br>" +
+                    "Use clear command to clear the screen. <br>"
                 );
             case "about":
                 return (
@@ -161,9 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
         }
     }
- function clearTerminal() {
-        terminalOutput.innerHTML = ""; // Clear all output content
-    }
+
     function switchToNormalMode() {
         document.body.classList.add("normal-mode");
     }
