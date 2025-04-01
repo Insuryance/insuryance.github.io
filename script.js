@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".stay").style.transition =
             "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform =
-            "translateX(-30px)";
+            "translateX(130px)";
 
         // Ensure smooth transition for final text
         setTimeout(() => {
@@ -118,14 +118,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "about":
                 return (
-                    "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited. <br>" +
-                    " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life. <br>" +
+                    " Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, <br>" + 
+                    " Before that, I had my own company BlueVelocity Technologies Private Limited. <br>" +
+                    " Before that, I was building a bunch of products, <br>" +
+                    " winning hackathons (passive income during my college days) and enjoying life. <br>" +
                     " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere."
                 );
             case "portfolio":
                 return (
-                    " I kinda have my portfolio spilled out in various spaces, places and domains. I've made products both in the hardware and the software space. <br>" +
-                    " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! <br>" +
+                    " I kinda have my portfolio spilled out in various spaces, places and domains. <br>" + 
+                    " I've made products both in the hardware and the software space. <br>" +
+                    " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" + 
+                    " If you're lurking, Google it out man! <br>" +
                     ' Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
                 );
             case "contact":
@@ -146,8 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "hackathons":
                 return (
-                    "Let's check the winning ones!" +
-                    " It all started when I came third in the first year of my college in an inter-year coding hackathon where we made an advanced email scrapper <br>" +
+                    " Let's check the winning ones!" +
+                    " It all started when I came third in the 1st year of my college in an inter-year coding hackathon <br>" + 
+                    " where we made an compact email scrapper analyser. <br>" +
                     " Post that, Hyundai's HSC Cup, x2 (one finalist, one regional winner). <br>" +
                     " TechGIUM, International Finalist and Regional Winner for developing curved solar panels with 21.7% higher efficiency. <br>" +
                     " UiPath's Automathon Winner for developing automatic air-pollution detection architecture using smog density and socio-activity of birds. <br>" +
@@ -158,9 +163,9 @@ document.addEventListener("DOMContentLoaded", function () {
             case "patents":
                 return (
                     "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>" +
-                    ' Patent Number 1: 202211031547 [ A simple device to extract shellac ] <br>' +
-                    ' Patent Number 2: 202211013032 [ A simple device to create shellac ]  <br>' +
-                    ' Patent Number 3: 202211013031 [ Fluid based Speed Breakers which does not give any jerk and reduces speed automatically ]'
+                    ' Patent Number 1: 202211031547 style="color: white; [ A simple device to extract shellac ] <br>' +
+                    ' Patent Number 2: 202211013032 style="color: white; [ A simple device to create shellac ]  <br>' +
+                    ' Patent Number 3: 202211013031 style="color: white; [ Fluid based Speed Breakers which does not give any jerk and reduces speed automatically ]'
                 );
             case "blogs":
                 return "Under Development";
