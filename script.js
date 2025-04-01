@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function interpretCommand(command) {
         switch (command) {
             case "help":
-                return "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch"
-                + "Use clear command to clear the screen";
+                return "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch <br>"
+                + "Use clear command to clear the screen <br>";
             case "about":
                 return "Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, before that, I had my own company BlueVelocity Technologies Private Limited. <br>"
                 + " Before to Before that, I was building a bunch of products, winning hackathons (passive income during my college days), enjoying life. <br>"
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 + " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. If you're lurking, Google it out man! <br>" 
                 + " Check me out on <a href='https://www.linkedin.com/in/suryanshamtiwari' target='_blank'>LinkedIn</a>";
             case "contact":
-                return "Email: <a href='mailto:insuryance@gmail.com'>insuryance@gmail.com</a>";
+                return "Email: <a href='mailto:insuryance@gmail.com' style='color: white;'>insuryance@gmail.com</a>";
             case "switch":
                 document.body.classList.toggle("normal-mode");
                 return "Switched to normal mode!";
@@ -123,11 +123,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 + " Winner Oxford University's Global Hackathon for XR based solution to reduce collateral damages of fast floods. <br>"
                 + " Huawei AI Award Winner by MLH and McHacks and the list continues..... <br>";
             case "patents":
-                return "Now, I by choice preferred Mechanical Engineering and therefore has a few simple patents out there. <br>"
-                + " I prefer making simple hardware which is innovative and ergonomical. <br>"
-                + " Patent Number 1: 202211031547 <br>"
-                + " Patent Number 2: 202211013032 <br>"
-                + " Patent Number 3: 202211013031 <br>"
+                return "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>"
+                + " I prefer making simple hardware which is innovative, ergonomical and involved the concept of biomimicry. <br>"
+                + " Patent Number 1: 202211031547 [ A simple device to extract shellac ] <br>"
+                + " Patent Number 2: 202211013032 [ A simple device to create shellac ]  <br>"
+                + " Patent Number 3: 202211013031 [ Fluid based Speed Breakers which does not give any jerk and reduces speed automatically ]  <br>"
                 + " Stay tuned for more such patents";
             case "blogs":
                 return "Under Development";
