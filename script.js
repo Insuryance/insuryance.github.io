@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     const app = document.getElementById("app");
 
-    // Create Title (Insuryance's Terminal → Surya's Terminal)
+    // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
     terminalTitle.innerHTML = `
         <span class="fall">I</span>
         <span class="fall">n</span>
-        <span class="fall">n</span>
-        <span class="fall">c</span>
-        <span class="fall">e</span>
+        <span class="fall">S</span>
+        <span class="fall">u</span>
+        <span class="fall">r</span>
+        <span class="fall">y</span>
+        <span class="fall">a</span>
         <span class="stay">'s </span>
         <span class="hidden surya">Surya</span>'s Terminal
     `;
@@ -53,9 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(showBootText, 700);
         }
     }
+    
     showBootText();
 
-    // Falling animation for Insuryance letters
+    // Falling animation for InSuryance letters
     setTimeout(() => {
         document.querySelectorAll(".fall").forEach(letter => {
             letter.style.animation = "fallDown 1s ease-out forwards";
@@ -65,10 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".stay").style.transition = "transform 1s ease-in-out";
         document.querySelector(".stay").style.transform = "translateX(-50px)";
 
-        // Show "Surya" after Insuryance drops
+        // Show "Surya" after InSuryance drops
         setTimeout(() => {
             document.querySelector(".surya").classList.remove("hidden");
+            document.querySelector(".surya").style.animation = "fadeIn 1s ease-in forwards"; // Add fade-in effect for Surya
         }, 1000);
+        
     }, 3000);
 
     // Handle user input
