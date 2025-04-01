@@ -4,7 +4,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create Title (Insuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
-    terminalTitle.innerHTML = "Insuryance<span class='fade-out'>'</span>s Terminal";
+    terminalTitle.innerHTML = `
+        <span class="fall">I</span>
+        <span class="fall">n</span>
+        <span>Surya's Terminal</span>
+        <span class="fall">u</span>
+        <span class="fall">r</span>
+        <span class="fall">y</span>
+        <span class="fall">a</span>
+        <span class="fall">n</span>
+        <span class="fall">c</span>
+        <span class="fall">e</span>
+        <span class="fall">'</span>
+    `;
     app.appendChild(terminalTitle);
 
     // Create the terminal output container
@@ -47,11 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     showBootText();
 
-    // Remove extra letters after 1 second
+    // Falling animation for extra letters
     setTimeout(() => {
-        terminalTitle.innerHTML = `<span class="fade-out">In</span><span class="fade-out">uryance'</span>Surya's Terminal`;
-        document.querySelectorAll(".fade-out").forEach(el => {
-            setTimeout(() => el.style.opacity = "0", 200);
+        document.querySelectorAll(".fall").forEach(letter => {
+            letter.style.animation = "fallDown 1s ease-out forwards";
         });
     }, 1000);
 
@@ -99,16 +110,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 + " TechGIUM, International Finalist and Regional Winner for developing curved solar panels with 21.7% higher efficiency. <br>"
                 + " UiPath's Automathon Winner for developing automatic air-pollution detection architecture using smog density and socio-activity of birds. <br>"
                 + " Winner Observer Research Foundation and Unleash Global Hackathon for developing rural vayurakshak concept to reduce air pollution. <br>"
-                + " Winner Oxford University's Global Hackathon for XR based solution to reduce collateral damanges of fast floods. <br>"
+                + " Winner Oxford University's Global Hackathon for XR based solution to reduce collateral damages of fast floods. <br>"
                 + " Huawei AI Award Winner by MLH and McHacks and the list continues..... <br>";
             case "patents":
                 return "Now, I by choice preferred Mechanical Engineering and therefore has a few simple patents out there. <br>"
                 + " I prefer making simple hardware which is innovative and ergonomical. <br>"
                 + " Patent 1 : Tool For Extraction/Scrapping Of shellac from a bark. Tool For Extraction/Scrapping Of shellac from a bark. <br>"
                 + " Patent Number: 202211031547 <br>"
-                + "Patent Number: 202211013032 <br>"
-                + "Patent Number: 202211013031 <br>"
-                + "Stay tuned for more such patents";
+                + " Patent Number: 202211013032 <br>"
+                + " Patent Number: 202211013031 <br>"
+                + " Stay tuned for more such patents";
             case "blogs":
                 return "Under Development";
             default:
@@ -120,29 +131,3 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add("normal-mode");
     }
 });
-document.addEventListener("DOMContentLoaded", function() {
-    const titleElement = document.createElement("h1");
-    titleElement.id = "terminal-title";
-    titleElement.innerHTML = `
-        <span class="fall">I</span>
-        <span class="fall">n</span>
-        <span>Surya's Terminal</span>
-        <span class="fall">u</span>
-        <span class="fall">r</span>
-        <span class="fall">y</span>
-        <span class="fall">a</span>
-        <span class="fall">n</span>
-        <span class="fall">c</span>
-        <span class="fall">e</span>
-        <span class="fall">'</span>
-    `;
-    
-    document.body.prepend(titleElement);
-    
-    setTimeout(() => {
-        document.querySelectorAll(".fall").forEach(letter => {
-            letter.style.animation = "fallDown 1s ease-out forwards";
-        });
-    }, 1000);
-});
-
