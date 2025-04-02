@@ -84,7 +84,7 @@ body {
 
 /* Adjust "'s" closer to "Surya" after animation */
 .stay.moved {
-    transform: translateX(-35px);
+    transform: translateX(-55px);
 }
 
 /* Terminal Output */
