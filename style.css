@@ -74,7 +74,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out; /* Reduced transition duration for quicker movement */
-    transform: translateX(-5px); /* Adjusted value */
+    transform: translateX(-60px); /* Adjusted value */
 }
 
 /* Terminal Output */
