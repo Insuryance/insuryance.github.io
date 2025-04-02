@@ -60,8 +60,8 @@ body {
 /* Move "'s" closer to Surya */
 .stay {
     display: inline-block;
-    transition: transform 5s ease-in-out;
-    transform: translateX(-90px);
+    transition: transform 3s ease-in-out;
+    transform: translateX(-70px);
 }
 
 /* Terminal Output */
