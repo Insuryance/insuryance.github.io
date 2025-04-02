@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         setTimeout(() => {
             document.querySelectorAll(".fall").forEach((letter) => {
-                letter.style.animation = "fallDown 10s ease-out forwards";
+                letter.style.animation = "fallDown 5s ease-out forwards";
             });
 
             // Move "'s" closer to "Surya"
