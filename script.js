@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".fall").forEach((letter, index) => {
             setTimeout(() => {
                 letter.style.animation = "fallDown 1s ease-out forwards";
-            }, index * 300); // 300ms delay between each letter
+            }, index * 500); // 500ms delay between each letter
         });
         // Move "'s" closer to "Surya"
         setTimeout(() => {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 staySpan.classList.add("moved");
             }
         }, 5000);
-    }, 2000);
+    }, 3000);
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
