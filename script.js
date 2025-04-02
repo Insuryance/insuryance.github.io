@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
+    if (!app) {
+        console.error("#app element not found. Ensure your HTML contains <div id='app'></div>");
+        return;
+    }
 
     // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
@@ -51,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     function showBootText() {
+        terminalOutput.innerHTML = "";
         bootText.forEach(line => {
             let bootLine = document.createElement("p");
             bootLine.innerHTML = line;
@@ -62,18 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Falling animation for InSuryance letters
     setTimeout(() => {
-        setTimeout(() => {
-            document.querySelectorAll(".fall").forEach((letter) => {
-                letter.style.animation = "fallDown 1s ease-out forwards";
-            });
+        document.querySelectorAll(".fall").forEach((letter) => {
+            letter.style.animation = "fallDown 1s ease-out forwards";
+        });
 
-            // Move "'s" closer to "Surya"
-            setTimeout(() => {
-                const staySpan = document.querySelector(".stay");
+        // Move "'s" closer to "Surya"
+        setTimeout(() => {
+            const staySpan = document.querySelector(".stay");
+            if (staySpan) {
                 staySpan.classList.add("moved");
-            }, 2000); // Delay before "'s Terminal" starts moving closer
-        }, 5000); // Wait 5 seconds before starting the falling animation
-    }, 2000); // Wait 2 seconds before starting the whole thing
+            }
+        }, 2000);
+    }, 2000);
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
@@ -82,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             terminalInput.value = "";
 
             if (inputValue === "clear") {
-                clearTerminal(); // Clear screen functionality
+                clearTerminal();
                 return;
             }
 
