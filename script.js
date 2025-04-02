@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".stay").style.transition =
                 "transform 1s ease-in-out";
             document.querySelector(".stay").style.transform =
-                "translateX(-150px)";
+                "translateX(-90px)";
 
             // Ensure smooth transition for final text
             setTimeout(() => {
