@@ -67,21 +67,21 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         setTimeout(() => {
             document.querySelectorAll(".fall").forEach((letter) => {
-                letter.style.animation = "fallDown 5s ease-out forwards";
+                letter.style.animation = "fallDown 10s ease-out forwards";
             });
 
             // Move "'s" closer to "Surya"
             document.querySelector(".stay").style.transition =
                 "transform 1s ease-in-out";
             document.querySelector(".stay").style.transform =
-                "translateX(350px)";
+                "translateX(-350px)";
 
             // Ensure smooth transition for final text
             setTimeout(() => {
                 document.querySelector(".stay").style.opacity = "1"; // Final adjustment
             }, 1000);
         }, 5000); // Wait 5 seconds before starting the falling animation
-    }, 2000); // Wait 2 seconds before starting the whole thing
+    }, 5000); // Wait 5 seconds before starting the whole thing
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
