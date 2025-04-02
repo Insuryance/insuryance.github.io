@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "about":
                 return (
-                    " Hi, I'm Suryansham, was an early bird for Insurance at PhonePe. <br>" + 
+                    " Hi, I'm Suryansham, a NIT A / IIT D alum. I was an early bird for Insurance at PhonePe. <br>" + 
                     " Before that, I had my own company BlueVelocity Technologies Private Limited. <br>" +
                     " Before that, I was busy building a bunch of products, <br>" +
                     " Winning hackathons (passive income during my college days) and enjoying life. <br>" +
@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return (
                     " I kinda have my portfolio spilled out in various spaces, places and domains. <br>" +
                     " I've made products both in the hardware and the software space. <br>" +
-                    " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" +
-                    " If you're lurking, Google it out man! <br>" +
+                    " I have three pending patents in the hardware space and have received grants for multiple software products as well. <br>" +
+                    " If you're lurking, let's connect! <br>" +
                     'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
                 );
             case "contact":
@@ -135,30 +135,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 return "Switched to normal mode!";
             case "media_coverage":
                 return (
-                    "<a href='https://www.northeasttoday.in/2022/04/09/tripura-suryansham-t-sonali-rastogi-from-nit-agartala-tops-in-hyundai-social-creator-awards-2021/' target='_blank'>NorthEastToday</a> <br>" +
-                    "<a href='https://tripuranet.com/tnet/hyundai-awards-two-nit-%E2%80%93agt-students-top-10-finalists-1871.html' target='_blank'>TripuraNet</a> <br>" +
-                    "<a href='https://www.theweek.in/wire-updates/business/2021/03/23/pwr1-hyundai-motor-india-foundation.html' target='_blank'>TheWeek</a> <br>" +
-                    "<a href='https://www.devdiscourse.com/article/education/1506202-hyundai-motor-india-foundation-announces-the-winner-of-h-social-creator-2020' target='_blank'>RandomMediaOutlet</a> <br>" +
-                    "<a href='https://www.businessworld.in/article/hyundai-motor-india-foundation-announces-winner-of-h-social-creator-2020-384562' target='_blank'>BusinessWorld</a> <br>" +
-                    "<a href='https://chennaiglitz.com/hyundai-motor-india-foundation-announces-the-winners-of-h-social-creator-2021/' target='_blank'>ChennaiGlitz</a> and More."
-                );
+                   "<a href='https://www.northeasttoday.in/2022/04/09/tripura-suryansham-t-sonali-rastogi-from-nit-agartala-tops-in-hyundai-social-creator-awards-2021/' target='_blank' style='color:#a79dcf;'>NorthEastToday</a> <br>" +
+                   "<a href='https://tripuranet.com/tnet/hyundai-awards-two-nit-%E2%80%93agt-students-top-10-finalists-1871.html' target='_blank' style='color:#a79dcf;'>TripuraNet</a> <br>" +
+                   "<a href='https://www.theweek.in/wire-updates/business/2021/03/23/pwr1-hyundai-motor-india-foundation.html' target='_blank' style='color:#a79dcf;'>TheWeek</a> <br>" +
+                   "<a href='https://www.devdiscourse.com/article/education/1506202-hyundai-motor-india-foundation-announces-the-winner-of-h-social-creator-2020' target='_blank' style='color:#a79dcf;'>RandomMediaOutlet</a> <br>" +
+                   "<a href='https://www.businessworld.in/article/hyundai-motor-india-foundation-announces-winner-of-h-social-creator-2020-384562' target='_blank' style='color:#a79dcf;'>BusinessWorld</a> <br>" +
+                   "<a href='https://chennaiglitz.com/hyundai-motor-india-foundation-announces-the-winners-of-h-social-creator-2021/' target='_blank' style='color:#a79dcf;'>ChennaiGlitz</a> and More."
+                            );
+                
             case "hackathons":
                 return (
-                    " Let's check the winning ones!" +
                     " It all started when I came third in the 1st year of my college in an inter-year coding hackathon <br>" + 
-                    " where we made an compact email scrapper analyser. <br>" +
+                    " where we made a compact email scrapper analyser. <br>" +
                     " Post that, Hyundai's HSC Cup, x2 (one finalist, one regional winner). <br>" +
                     " TechGIUM, International Finalist and Regional Winner for developing curved solar panels with 21.7% higher efficiency. <br>" +
                     " UiPath's Automathon Winner for developing automatic air-pollution detection architecture using smog density and socio-activity of birds. <br>" +
                     " Winner Observer Research Foundation and Unleash Global Hackathon for developing rural vayurakshak concept to reduce air pollution. <br>" +
                     " Winner Oxford University's Global Hackathon for XR based solution to reduce collateral damages of fast floods. <br>" +
-                    " Huawei AI Award Winner by MLH and McHacks and the list continues....."
+                    " Huawei AI Award Winner by MLH and McHacks and the list goes on and on....."
                 );
             case "patents":
                 return (
                     "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>" +
                     ' Patent Number 1: 202211031547 [ A simple device to extract shellac ] <br>' +
-                    ' Patent Number 2: 202211013032 [ A simple device to create shellac ]  <br>' +
+                    ' Patent Number 2: 202211013032 [ A simple device to create artificial shellac on trees ]  <br>' +
                     ' Patent Number 3: 202211013031 [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]'
                 );
             case "blogs":
