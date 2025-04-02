@@ -61,7 +61,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 5s ease-in-out;
-    transform: translateX(-165px);
+    transform: translateX(-90px);
 }
 
 /* Terminal Output */
