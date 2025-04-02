@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" + 
                     " If you're lurking, Google it out man! <br>" +
                     ' Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
+                    ' Or/And follow me on <a href="https://medium.com/@insuryance" target="_blank">Medium</a>'
                 );
             case "contact":
                 return (
@@ -154,7 +155,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     ' Patent Number 3: 202211013031 style="color: white; [ Fluid based Speed Breakers which does not give any jerk and reduces speed automatically ]'
                 );
             case "blogs":
-                return "Under Development";
+                return (
+                    ' I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" style="color: blue; target="_blank">Medium</a>'
+                    );
             default:
                 return (
                     `Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.`
