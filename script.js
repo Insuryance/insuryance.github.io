@@ -118,12 +118,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "portfolio":
                 return (
-                    " I kinda have my portfolio spilled out in various spaces, places and domains. <br>" + 
+                    " I kinda have my portfolio spilled out in various spaces, places and domains. <br>" +
                     " I've made products both in the hardware and the software space. <br>" +
-                    " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" + 
+                    " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" +
                     " If you're lurking, Google it out man! <br>" +
-                    ' Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
+                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
                 );
+
             case "contact":
                 return (
                     'Email: <a href="mailto:insuryance@gmail.com" style="color: white;">insuryance@gmail.com</a>'
