@@ -72,9 +72,9 @@ setTimeout(() => {
     document.querySelectorAll(".fall").forEach((letter, index) => {
         setTimeout(() => {
             letter.style.animation = "fallDown 1s ease-out forwards";
-        }, index * 500); // Each letter drops 500ms apart
+        }, index * 200); // Each letter drops 500ms apart
     });
-}, 5000); // Wait 5s before starting the drop effect
+}, 2000); // Wait 5s before starting the drop effect
 
         // Move "'s" closer to "Surya"
         setTimeout(() => {
@@ -82,7 +82,7 @@ setTimeout(() => {
             if (staySpan) {
                 staySpan.classList.add("moved");
             }
-        }, 5000);
+        }, 3000);
     }, 3000);
 
     // Handle user input
