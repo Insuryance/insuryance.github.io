@@ -157,10 +157,11 @@ document.addEventListener("DOMContentLoaded", function () {
             case "patents":
                 return (
                     "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>" +
-                    ' Patent Number 1: 202211031547 [ A simple device to extract shellac ] <br>' +
-                    ' Patent Number 2: 202211013032 [ A simple device to create artificial shellac on trees ]  <br>' +
-                    ' Patent Number 3: 202211013031 [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]'
-                );
+                    "Patent Number 1: <span style='color: white;'>202211031547</span> [ A simple device to extract shellac ] <br>" +
+                    "Patent Number 2: <span style='color: white;'>202211013032</span> [ A simple device to create artificial shellac on trees ] <br>" +
+                    "Patent Number 3: <span style='color: white;'>202211013031</span> [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]" 
+                       );
+                
             case "blogs":
                 return (
                     'I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" target="_blank" style="color: blue;">Medium</a>'
