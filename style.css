@@ -60,20 +60,22 @@ body {
 }
 
 @keyframes fallDown {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(50px); /* Move letters down */
+    0%, 80% { /* Keep it visible for 4s */
+        transform: translateY(0);
         opacity: 1;
+    }
+    100% { /* After delay, fall down */
+        transform: translateY(50px);
+        opacity: 0;
     }
 }
 .fall {
     display: inline-block;
     opacity: 1; /* Ensure letters remain visible */
     position: relative;
+    animation-delay: 5s; /* Wait for 5 seconds */
 }
+
 
 /* Move "'s" further right initially */
 .stay {
