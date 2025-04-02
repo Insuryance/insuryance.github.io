@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     " I might have a few patents as well? Got multiple grants in the hardware and the software projects as well. <br>" + 
                     " If you're lurking, Google it out man! <br>" +
                     ' Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
-                    ' Or/And follow me on <a href="https://medium.com/@insuryance" target="_blank">Medium</a>'
                 );
             case "contact":
                 return (
