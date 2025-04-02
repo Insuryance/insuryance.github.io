@@ -74,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".stay").style.transition =
                 "transform 1s ease-in-out";
             document.querySelector(".stay").style.transform =
-                "translateX(-50px)"; // Adjusted closer to Surya
+                "translateX(-30px)"; // Adjusted closer to Surya
 
             // Ensure smooth transition for final text
             setTimeout(() => {
                 document.querySelector(".stay").style.opacity = "1"; // Final adjustment
-            }, 1000);
-        }, 2000); // Wait 2 seconds before starting the falling animation
+            }, 2000);
+        }, 5000); // Wait 5 seconds before starting the falling animation
     }, 2000); // Wait 2 seconds before starting the whole thing
 
     // Handle user input
