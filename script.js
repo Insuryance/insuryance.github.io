@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    console.log("Script loaded successfully"); // Debugging log
+
     // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
     terminalInputContainer.innerHTML =
-        "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> "; // Correct Prompt
+        "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
 
     // Create the input field
     const terminalInput = document.createElement("input");
