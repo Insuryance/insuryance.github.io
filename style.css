@@ -70,11 +70,16 @@ body {
     }
 }
 
-/* Move "'s" closer to Surya */
+/* Move "'s" further right initially */
 .stay {
     display: inline-block;
-    transition: transform 1s ease-in-out; /* Reduced transition duration for quicker movement */
-    transform: translateX(-50px); /* Adjusted value */
+    transform: translateX(50px); /* Pushed further right initially */
+    transition: transform 1s ease-in-out; /* Smooth transition */
+}
+
+/* Adjust "'s" closer to "Surya" after animation */
+.stay.moved {
+    transform: translateX(-25px); /* Moves closer to Surya */
 }
 
 /* Terminal Output */
