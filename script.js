@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "",
     ];
 
-    let index = 0;
     function showBootText() {
         bootText.forEach(line => {
             let bootLine = document.createElement("p");
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 const staySpan = document.querySelector(".stay");
                 staySpan.style.transition = "transform 1s ease-in-out";
-                staySpan.style.transform = "translateX(-50px)"; // Super close to Surya
+                staySpan.style.transform = "translateX(-25px)"; // Adjusted closer to Surya
             }, 2000); // Delay before "'s Terminal" starts moving closer
         }, 5000); // Wait 5 seconds before starting the falling animation
     }, 2000); // Wait 2 seconds before starting the whole thing
