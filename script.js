@@ -68,18 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
     showBootText();
 
     // Falling animation for InSuryance letters
-    setTimeout(() => {
-        document.querySelectorAll(".fall").forEach((letter) => {
-            letter.style.animation = "fallDown 1s ease-out forwards";
+ setTimeout(() => {
+        document.querySelectorAll(".fall").forEach((letter, index) => {
+            setTimeout(() => {
+                letter.style.animation = "fallDown 1s ease-out forwards";
+            }, index * 300); // 300ms delay between each letter
         });
-
         // Move "'s" closer to "Surya"
         setTimeout(() => {
             const staySpan = document.querySelector(".stay");
             if (staySpan) {
                 staySpan.classList.add("moved");
             }
-        }, 2000);
+        }, 5000);
     }, 2000);
 
     // Handle user input
