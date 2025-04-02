@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
     terminalInputContainer.innerHTML =
-        "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> ";
+        "<span class='prompt'>\u03BB :: ~ </span>"; // Removed unnecessary ">>"
 
     // Create the input field
     const terminalInput = document.createElement("input");
@@ -52,13 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let index = 0;
     function showBootText() {
-        if (index < bootText.length) {
+        bootText.forEach(line => {
             let bootLine = document.createElement("p");
-            bootLine.innerHTML = bootText[index];
+            bootLine.innerHTML = line;
             terminalOutput.appendChild(bootLine);
-            index++;
-            setTimeout(showBootText, 700);
-        }
+        });
     }
 
     showBootText();
@@ -71,15 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Move "'s" closer to "Surya"
-            document.querySelector(".stay").style.transition =
-                "transform 1s ease-in-out";
-            document.querySelector(".stay").style.transform =
-                "translateX(-10px)"; // Adjusted closer to Surya
-
-            // Ensure smooth transition for final text
             setTimeout(() => {
-                document.querySelector(".stay").style.opacity = "1"; // Final adjustment
-            }, 2000);
+                document.querySelector(".stay").style.transition =
+                    "transform 1s ease-in-out";
+                document.querySelector(".stay").style.transform =
+                    "translateX(-5px)"; // Super close to Surya
+
+                // Ensure smooth transition for final text
+                setTimeout(() => {
+                    document.querySelector(".stay").style.opacity = "1"; // Final adjustment
+                }, 1000);
+            }, 2000); // Delay before "'s Terminal" starts moving closer
         }, 5000); // Wait 5 seconds before starting the falling animation
     }, 2000); // Wait 2 seconds before starting the whole thing
 
@@ -169,8 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
-       function clearTerminal() {
-        terminalOutput.innerHTML = ""; // Clear all output content
+        function clearTerminal() {
+        // Clear all user-added content but preserve boot text
+        terminalOutput.innerHTML = ""; 
         showBootText(); // Redisplay initial boot text after clearing
            
     }
