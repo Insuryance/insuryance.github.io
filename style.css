@@ -25,7 +25,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    overflow: hidden;  /* Prevent content from stretching beyond container */
+    overflow: hidden; /* Prevent content from stretching beyond container */
 }
 
 /* Terminal Title */
@@ -53,15 +53,21 @@ body {
 }
 
 @keyframes fallDown {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(50px); opacity: 0; }
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
 }
 
 /* Move "'s" closer to Surya */
 .stay {
     display: inline-block;
-    transition: transform 3s ease-in-out;
-    transform: translateX(-70px);
+    transition: transform 1s ease-in-out; /* Reduced transition duration for quicker movement */
+    transform: translateX(-40px); /* Adjusted value */
 }
 
 /* Terminal Output */
