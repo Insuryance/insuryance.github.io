@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Boot-up welcome text
     const bootText = [
         "insuryance:$ type help to start",
-        "<a href='#' onclick='switchToNormalMode()' style='color:lightblue;'>Visit Normal website</a>", // Light Blue Color
+        "<a href='#' onclick='switchToNormalMode()' style='color: lightblue;'>Visit Normal website</a>", // Light Blue Color
         "",
     ];
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector(".stay").style.transition =
                     "transform 1s ease-in-out";
                 document.querySelector(".stay").style.transform =
-                    "translateX(-10px)"; // Super close to Surya
+                    "translateX(-5px)"; // Super close to Surya
 
                 // Ensure smooth transition for final text
                 setTimeout(() => {
