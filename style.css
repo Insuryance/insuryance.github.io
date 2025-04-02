@@ -65,13 +65,14 @@ body {
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(50px); /* Move letters down */
         opacity: 1;
     }
 }
 .fall {
     display: inline-block;
-    opacity: 0; /* Start hidden */
+    opacity: 1; /* Ensure letters remain visible */
+    position: relative;
 }
 
 /* Move "'s" further right initially */
