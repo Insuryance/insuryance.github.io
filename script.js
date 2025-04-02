@@ -150,9 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
             case "patents":
                 return (
                     "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>" +
-                    ' Patent Number 1: 202211031547 style="color: white; [ A simple device to extract shellac ] <br>' +
-                    ' Patent Number 2: 202211013032 style="color: white; [ A simple device to create shellac ]  <br>' +
-                    ' Patent Number 3: 202211013031 style="color: white; [ Fluid based Speed Breakers which does not give any jerk and reduces speed automatically ]'
+                    ' Patent Number 1: 202211031547 [ A simple device to extract shellac ] <br>' +
+                    ' Patent Number 2: 202211013032 [ A simple device to create shellac ]  <br>' +
+                    ' Patent Number 3: 202211013031 [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]'
                 );
             case "blogs":
                 return (
