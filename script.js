@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (command) {
             case "help":
                 return (
-                    "Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch, clear <br>" +
-                    "Use clear command to clear the screen. <br>"
+                    " Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch, clear <br>" +
+                    " Use clear command to clear the screen. <br>"
                 );
             case "about":
                 return (
@@ -160,8 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "blogs":
                 return (
-                    ' I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" style="color: blue; target="_blank">Medium</a>'
-                    );
+                    'I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" target="_blank" style="color: blue;">Medium</a>'
+                );
             default:
                 return (
                     `Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.`
