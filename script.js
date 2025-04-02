@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         setTimeout(() => {
             document.querySelectorAll(".fall").forEach((letter) => {
-                letter.style.animation = "fallDown 1s ease-out forwards";
+                letter.style.animation = "fallDown 5s ease-out forwards";
             });
 
             // Move "'s" closer to "Surya"
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 document.querySelector(".stay").style.opacity = "1"; // Final adjustment
             }, 1000);
-        }, 2000); // Wait 2 seconds before starting the falling animation
+        }, 5000); // Wait 5 seconds before starting the falling animation
     }, 2000); // Wait 2 seconds before starting the whole thing
 
     // Handle user input
@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             case "about":
                 return (
-                    " Hi, I'm Suryansham, was an early bird for Insurance at PhonePe before, <br>" + 
+                    " Hi, I'm Suryansham, was an early bird for Insurance at PhonePe. <br>" + 
                     " Before that, I had my own company BlueVelocity Technologies Private Limited. <br>" +
-                    " Before that, I was building a bunch of products, <br>" +
-                    " winning hackathons (passive income during my college days) and enjoying life. <br>" +
+                    " Before that, I was busy building a bunch of products, <br>" +
+                    " Winning hackathons (passive income during my college days) and enjoying life. <br>" +
                     " Currently, I'm more focused towards the FinTech space. Aiming to connect the fintech dots with the AI eco-sphere."
                 );
             case "portfolio":
@@ -162,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     `Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.`
                 );
         }
+    }
+    
+       function clearTerminal() {
+        terminalOutput.innerHTML = ""; // Clear all output content
     }
 
     function switchToNormalMode() {
