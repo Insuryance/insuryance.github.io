@@ -68,12 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
     showBootText();
 
     // Falling animation for InSuryance letters
- setTimeout(() => {
-        document.querySelectorAll(".fall").forEach((letter, index) => {
-            setTimeout(() => {
-                letter.style.animation = "fallDown 1s ease-out forwards";
-            }, index * 500); // 500ms delay between each letter
-        });
+setTimeout(() => {
+    document.querySelectorAll(".fall").forEach((letter, index) => {
+        setTimeout(() => {
+            letter.style.animation = "fallDown 1s ease-out forwards";
+        }, index * 500); // Each letter drops 500ms apart
+    });
+}, 5000); // Wait 5s before starting the drop effect
+
         // Move "'s" closer to "Surya"
         setTimeout(() => {
             const staySpan = document.querySelector(".stay");
