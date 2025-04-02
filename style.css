@@ -56,7 +56,7 @@ body {
 .fall {
     display: inline-block;
     position: relative;
-    animation: fallDown 1s ease-out forwards;
+    animation: fallDown 5s ease-out forwards;
 }
 
 @keyframes fallDown {
@@ -79,7 +79,7 @@ body {
 
 /* Adjust "'s" closer to "Surya" after animation */
 .stay.moved {
-    transform: translateX(-25px);
+    transform: translateX(-05px);
 }
 
 /* Terminal Output */
