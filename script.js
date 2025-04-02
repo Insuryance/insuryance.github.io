@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const terminalInputContainer = document.createElement("div");
     terminalInputContainer.id = "terminal-input-container";
     terminalInputContainer.innerHTML =
-        "<span class='prompt'>\u03BB :: ~ </span>"; // Removed unnecessary ">>"
+        "<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> "; // Correct Prompt
 
     // Create the input field
     const terminalInput = document.createElement("input");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Boot-up welcome text
     const bootText = [
         "insuryance:$ type help to start",
-        "<a href='#' onclick='switchToNormalMode()'>Visit Normal website</a>",
+        "<a href='#' onclick='switchToNormalMode()' style='color:lightblue;'>Visit Normal website</a>", // Light Blue Color
         "",
     ];
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector(".stay").style.transition =
                     "transform 1s ease-in-out";
                 document.querySelector(".stay").style.transform =
-                    "translateX(-5px)"; // Super close to Surya
+                    "translateX(-10px)"; // Super close to Surya
 
                 // Ensure smooth transition for final text
                 setTimeout(() => {
