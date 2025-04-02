@@ -67,27 +67,32 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         setTimeout(() => {
             document.querySelectorAll(".fall").forEach((letter) => {
-                letter.style.animation = "fallDown 5s ease-out forwards";
+                letter.style.animation = "fallDown 1s ease-out forwards";
             });
 
             // Move "'s" closer to "Surya"
             document.querySelector(".stay").style.transition =
                 "transform 1s ease-in-out";
             document.querySelector(".stay").style.transform =
-                "translateX(-70px)";
+                "translateX(-50px)"; // Adjusted closer to Surya
 
             // Ensure smooth transition for final text
             setTimeout(() => {
                 document.querySelector(".stay").style.opacity = "1"; // Final adjustment
             }, 1000);
-        }, 5000); // Wait 5 seconds before starting the falling animation
-    }, 5000); // Wait 5 seconds before starting the whole thing
+        }, 2000); // Wait 2 seconds before starting the falling animation
+    }, 2000); // Wait 2 seconds before starting the whole thing
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             let inputValue = terminalInput.value.trim().toLowerCase();
             terminalInput.value = "";
+
+            if (inputValue === "clear") {
+                clearTerminal(); // Clear screen functionality
+                return;
+            }
 
             let response = interpretCommand(inputValue);
             const newLine = document.createElement('p');
@@ -166,6 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
        function clearTerminal() {
         terminalOutput.innerHTML = ""; // Clear all output content
+        showBootText(); // Redisplay initial boot text after clearing
+           
     }
 
     function switchToNormalMode() {
