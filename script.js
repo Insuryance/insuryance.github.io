@@ -68,13 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     showBootText();
 
     // Falling animation for InSuryance letters
-setTimeout(() => {
-    document.querySelectorAll(".fall").forEach((letter, index) => {
-        setTimeout(() => {
-            letter.style.animation = "fallDown 1s ease-out forwards";
-        }, index * 200); // Each letter drops 500ms apart
-    });
-}, 2000); // Wait 5s before starting the drop effect
+    setTimeout(() => {
+        document.querySelectorAll(".fall").forEach((letter, index) => {
+            setTimeout(() => {
+                letter.style.animation = "fallDown 1s ease-out forwards";
+            }, index * 200); // Each letter drops 200ms apart
+        });
 
         // Move "'s" closer to "Surya"
         setTimeout(() => {
@@ -83,7 +82,7 @@ setTimeout(() => {
                 staySpan.classList.add("moved");
             }
         }, 3000);
-    }, 3000);
+    }, 2000); // Wait 2s before starting the drop effect
 
     // Handle user input
     terminalInput.addEventListener("keydown", function (event) {
@@ -127,7 +126,6 @@ setTimeout(() => {
                     " If you're lurking, Google it out man! <br>" +
                     'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
                 );
-
             case "contact":
                 return (
                     'Email: <a href="mailto:insuryance@gmail.com" style="color: white;">insuryance@gmail.com</a>'
@@ -174,11 +172,10 @@ setTimeout(() => {
         }
     }
     
-        function clearTerminal() {
+    function clearTerminal() {
         // Clear all user-added content but preserve boot text
         terminalOutput.innerHTML = ""; 
-        showBootText(); // Redisplay initial boot text after clearing
-           
+        showBootText(); // Redisplay initial boot text after clearing           
     }
 
     function switchToNormalMode() {
