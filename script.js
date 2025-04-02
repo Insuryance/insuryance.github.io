@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Boot-up welcome text
     const bootText = [
         "insuryance:$ type help to start",
-        "<a href='#' onclick='switchToNormalMode()' style='color: lightblue; text-decoration: none;'>Visit Normal website</a>", // Light Blue Color & No Underline
+        "<a href='#' onclick='switchToNormalMode()' style='color: lightblue; text-decoration: none;'>Visit Normal website</a>",
         "",
     ];
 
@@ -70,8 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Move "'s" closer to "Surya"
             setTimeout(() => {
                 const staySpan = document.querySelector(".stay");
-                staySpan.style.transition = "transform 1s ease-in-out";
-                staySpan.style.transform = "translateX(-25px)"; // Adjusted closer to Surya
+                staySpan.classList.add("moved");
             }, 2000); // Delay before "'s Terminal" starts moving closer
         }, 5000); // Wait 5 seconds before starting the falling animation
     }, 2000); // Wait 2 seconds before starting the whole thing
