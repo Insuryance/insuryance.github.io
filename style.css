@@ -16,6 +16,13 @@ body {
     overflow: hidden;
 }
 
+/* Reset potential global styles to avoid artifacts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Terminal Container */
 #app {
     width: 80%;
@@ -67,7 +74,7 @@ body {
 .stay {
     display: inline-block;
     transition: transform 1s ease-in-out; /* Reduced transition duration for quicker movement */
-    transform: translateX(-10px); /* Adjusted value */
+    transform: translateX(-5px); /* Adjusted value */
 }
 
 /* Terminal Output */
