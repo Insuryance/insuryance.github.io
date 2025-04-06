@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (command) {
             case "help":
                 return (
-                    " Available commands: about, portfolio, contact, media_coverage, patents, hackathons, blogs, switch, clear <br>" +
+                    " Available commands: about, portfolio, contact, media_coverage, patents, hackathons, articles, clear <br>" +
                     " Use clear command to clear the screen. <br>"
                 );
             case "about":
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     " I've made products both in the hardware and the software space. <br>" +
                     " I have three pending patents in the hardware space and have received grants for multiple software products as well. <br>" +
                     " If you're lurking, let's connect! <br>" +
-                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>'
+                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" style="color: white; target="_blank">LinkedIn</a>'
                 );
             case "contact":
                 return (
@@ -162,13 +162,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Patent Number 3: <span style='color: white;'>202211013031</span> [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]" 
                        );
                 
-            case "blogs":
+            case "articles":
                 return (
+                    'Development of Deep Reinforcement Learning models in a Ball Balancing Environment [sponsored by iHub and HCL] <a href="https://www.researchgate.net/publication/390231443_Development_of_Deep_Reinforcement_Learning_models_in_a_Ball_Balancing_Environment_using_Unity3D" target="_blank" style="color: blue;">ResearchGate</a>' +
                     'I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" target="_blank" style="color: blue;">Medium</a>'
                 );
             default:
                 return (
-                    `Command not recognized / Bhai dhang se type krle. Type 'help' for a list of commands.`
+                    `Command not recognized. Type 'help' for a list of commands.`
                 );
         }
     }
