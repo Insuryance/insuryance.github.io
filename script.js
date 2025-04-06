@@ -124,11 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     " I've made products both in the hardware and the software space. <br>" +
                     " I have three pending patents in the hardware space and have received grants for multiple software products as well. <br>" +
                     " If you're lurking, let's connect! <br>" +
-                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" style="color: white; target="_blank">LinkedIn</a>'
+                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" style="color: lightblue; target="_blank">LinkedIn</a>'
                 );
             case "contact":
                 return (
-                    'Email: <a href="mailto:insuryance@gmail.com" style="color: white;">insuryance@gmail.com</a>'
+                    'Email: <a href="mailto:insuryance@gmail.com" style="color: lightblue;">insuryance@gmail.com</a>'
                 );
             case "switch":
                 document.body.classList.toggle("normal-mode");
@@ -157,15 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
             case "patents":
                 return (
                     "Now, I was all about innovation, thinking the unthinkable and so are my patents. <br>" +
-                    "Patent Number 1: <span style='color: white;'>202211031547</span> [ A simple device to extract shellac ] <br>" +
-                    "Patent Number 2: <span style='color: white;'>202211013032</span> [ A simple device to create artificial shellac on trees ] <br>" +
-                    "Patent Number 3: <span style='color: white;'>202211013031</span> [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]" 
+                    "Patent Number 1: <span style='color: lightblue;'>202211031547</span> [ A simple device to extract shellac ] <br>" +
+                    "Patent Number 2: <span style='color: lightblue;'>202211013032</span> [ A simple device to create artificial shellac on trees ] <br>" +
+                    "Patent Number 3: <span style='color: lightblue;'>202211013031</span> [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]" 
                        );
                 
             case "articles":
                 return (
-                    'Development of Deep Reinforcement Learning models in a Ball Balancing Environment [sponsored by iHub and HCL] <a href="https://www.researchgate.net/publication/390231443_Development_of_Deep_Reinforcement_Learning_models_in_a_Ball_Balancing_Environment_using_Unity3D" target="_blank" style="color: blue;">ResearchGate</a>' +
-                    'I write blogs on Medium, you can follow me there <a href="https://medium.com/@insuryance" target="_blank" style="color: blue;">Medium</a>'
+                    'Development of Deep Reinforcement Learning models in a Ball Balancing Environment [sponsored by iHub and HCL] :: <a href="https://www.researchgate.net/publication/390231443_Development_of_Deep_Reinforcement_Learning_models_in_a_Ball_Balancing_Environment_using_Unity3D " target="_blank" style="color: lightblue;">ResearchGate</a>' +
+                    "<br>"
+                    'I write blogs on Medium, you can follow me there :: <a href="https://medium.com/@insuryance" target="_blank" style="color: lightblue;">Medium</a>'
                 );
             default:
                 return (
