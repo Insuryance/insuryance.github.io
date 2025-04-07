@@ -181,7 +181,38 @@ document.addEventListener("DOMContentLoaded", function () {
         showBootText(); // Redisplay initial boot text after clearing           
     }
 
-    function switchToNormalMode() {
-        document.body.classList.add("normal-mode");
+function switchToNormalMode() {
+  const body = document.body;
+  const terminalContainer = document.querySelector('.terminal-container');
+  const normalContainer = document.querySelector('.normal-mode-container');
+
+  // Step 1: Fade out terminal mode
+  terminalContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  terminalContainer.style.opacity = '0';
+  terminalContainer.style.transform = 'scale(0.95)';
+
+  // Step 2: After fade, hide terminal and show normal mode
+  setTimeout(() => {
+    terminalContainer.style.display = 'none';
+
+    // Apply light theme
+    body.style.backgroundColor = '#f5f6fa'; // soft pastel background
+    body.style.color = '#333'; // subtle dark text
+    body.style.fontFamily = "'Inter', sans-serif"; // modern font
+    body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+
+    // Show normal container
+    normalContainer.style.display = 'flex';
+    normalContainer.style.opacity = '0';
+    normalContainer.style.transform = 'translateY(20px)';
+    normalContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+    setTimeout(() => {
+      normalContainer.style.opacity = '1';
+      normalContainer.style.transform = 'translateY(0)';
+    }, 50);
+  }, 600);
+}
+
     }
 });
