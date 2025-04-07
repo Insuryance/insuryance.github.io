@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case "articles":
                 return (
                     'Development of Deep Reinforcement Learning models in a Ball Balancing Environment [sponsored by iHub and HCL] :: <a href="https://www.researchgate.net/publication/390231443_Development_of_Deep_Reinforcement_Learning_models_in_a_Ball_Balancing_Environment_using_Unity3D " target="_blank" style="color: lightblue;">ResearchGate</a>' +
-                    "<br>"
+                    "<br>" +
                     'I write blogs on Medium, you can follow me there :: <a href="https://medium.com/@insuryance" target="_blank" style="color: lightblue;">Medium</a>'
                 );
             default:
