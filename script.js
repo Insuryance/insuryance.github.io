@@ -215,4 +215,4 @@ function switchToNormalMode() {
 }
 
     }
-});
+);
