@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 
             case "hackathons":
                 return (
-                    " It all started when I came third in the 1st year of my college in an inter-year coding hackathon <br>" + 
-                    " where we made a compact email scrapper analyser. <br>" +
+                    " It all started when I came third in the 1st year of my college in an inter-year coding hackathon :D <br>" + 
+                    " Where we made a compact email scrapper analyser. (pretty simple stuff but great analytics). <br>" +
                     " Post that, Hyundai's HSC Cup, x2 (one finalist, one regional winner). <br>" +
                     " TechGIUM, International Finalist and Regional Winner for developing curved solar panels with 21.7% higher efficiency. <br>" +
                     " UiPath's Automathon Winner for developing automatic air-pollution detection architecture using smog density and socio-activity of birds. <br>" +
