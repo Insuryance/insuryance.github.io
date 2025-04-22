@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Favicon links -->
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-    <head>
+<head>
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insuryance Terminal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- tsparticles (particles.js alternative) -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
 <body>
+    <!-- Particle background -->
+    <div id="tsparticles" style="position: fixed; z-index: -1; width: 100%; height: 100%; top: 0; left: 0;"></div>
+
     <div id="app">
         <div id="terminal-output"></div>
         <div id="input-container">
@@ -21,6 +28,7 @@
             <input type="text" id="terminal-input" autofocus>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
