@@ -216,10 +216,11 @@ function switchToNormalMode() {
 
     }
 );
-tsParticles.load("particles-js", {
+// Particle background with repulsion effect and soft purple color
+tsParticles.load("tsparticles", {
     background: {
         color: {
-            value: "#0d0d0d"
+            value: "#00000000" // transparent
         }
     },
     fpsLimit: 60,
@@ -240,17 +241,17 @@ tsParticles.load("particles-js", {
     },
     particles: {
         color: {
-            value: "#ffffff"
+            value: "#c8a2c8" // soft purple
         },
         links: {
-            color: "#ffffff",
+            color: "#c8a2c8",
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.5,
             width: 1
         },
         collisions: {
-            enable: false
+            enable: true
         },
         move: {
             direction: "none",
@@ -276,9 +277,8 @@ tsParticles.load("particles-js", {
             type: "circle"
         },
         size: {
-            value: { min: 1, max: 3 }
+            value: { min: 1, max: 5 }
         }
     },
     detectRetina: true
 });
-
