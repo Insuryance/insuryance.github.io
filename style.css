@@ -251,3 +251,27 @@ body.normal-mode #app {
     position: relative;
     z-index: 1;
 }
+@media (max-width: 768px) {
+    #app {
+        width: 95%;
+        height: auto;
+    }
+
+    #terminal-title {
+        font-size: 32px;
+    }
+
+    #terminal-output {
+        font-size: 16px;
+        max-height: 50vh;
+    }
+
+    #terminal-input {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .prompt {
+        font-size: 16px;
+    }
+}
