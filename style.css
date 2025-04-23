@@ -9,11 +9,14 @@ body {
     color: #9ece6a;
     font-family: 'Fira Code', monospace;
     font-size: 16px;
-    height: 100vh;
+    min-height: 100vh; /* instead of fixed height */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden; /* prevent side scrolling */
+    overflow-y: auto;   /* allow vertical scroll */
+    padding: 20px;
 }
 
 /* Reset potential global styles to avoid artifacts */
