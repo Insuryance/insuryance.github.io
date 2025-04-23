@@ -6,7 +6,72 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log("Script loaded successfully"); // Debugging log
-
+    // Particle background with repulsion effect and soft purple color
+tsParticles.load("tsparticles", {
+    background: {
+        color: {
+            value: "#00000000" // transparent
+        }
+    },
+    fpsLimit: 60,
+    interactivity: {
+        events: {
+            onHover: {
+                enable: true,
+                mode: "repulse"
+            },
+            resize: true
+        },
+        modes: {
+            repulse: {
+                distance: 100,
+                duration: 0.4
+            }
+        }
+    },
+    particles: {
+        color: {
+            value: "#c8a2c8" // soft purple
+        },
+        links: {
+            color: "#c8a2c8",
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1
+        },
+        collisions: {
+            enable: true
+        },
+        move: {
+            direction: "none",
+            enable: true,
+            outModes: {
+                default: "bounce"
+            },
+            random: false,
+            speed: 1,
+            straight: false
+        },
+        number: {
+            density: {
+                enable: true,
+                area: 800
+            },
+            value: 60
+        },
+        opacity: {
+            value: 0.5
+        },
+        shape: {
+            type: "circle"
+        },
+        size: {
+            value: { min: 1, max: 5 }
+        }
+    },
+    detectRetina: true
+});
     // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
@@ -216,69 +281,3 @@ function switchToNormalMode() {
 
     }
 );
-// Particle background with repulsion effect and soft purple color
-tsParticles.load("tsparticles", {
-    background: {
-        color: {
-            value: "#00000000" // transparent
-        }
-    },
-    fpsLimit: 60,
-    interactivity: {
-        events: {
-            onHover: {
-                enable: true,
-                mode: "repulse"
-            },
-            resize: true
-        },
-        modes: {
-            repulse: {
-                distance: 100,
-                duration: 0.4
-            }
-        }
-    },
-    particles: {
-        color: {
-            value: "#c8a2c8" // soft purple
-        },
-        links: {
-            color: "#c8a2c8",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1
-        },
-        collisions: {
-            enable: true
-        },
-        move: {
-            direction: "none",
-            enable: true,
-            outModes: {
-                default: "bounce"
-            },
-            random: false,
-            speed: 1,
-            straight: false
-        },
-        number: {
-            density: {
-                enable: true,
-                area: 800
-            },
-            value: 60
-        },
-        opacity: {
-            value: 0.5
-        },
-        shape: {
-            type: "circle"
-        },
-        size: {
-            value: { min: 1, max: 5 }
-        }
-    },
-    detectRetina: true
-});
