@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Script loaded successfully"); // Debugging log
     
+    // Create a div for tsParticles if it doesn't exist
+    if (!document.getElementById("tsparticles")) {
+        const particlesDiv = document.createElement("div");
+        particlesDiv.id = "tsparticles";
+        document.body.prepend(particlesDiv);
+    }
+    
     // Only load particles on desktop (screen width > 768px)
     if (window.innerWidth > 768) {
         // Particle background with repulsion effect and soft purple color
