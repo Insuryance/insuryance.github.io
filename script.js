@@ -303,12 +303,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h1>Suryansham Tiwari</h1>
                 <p>Welcome to my personal website. This is the normal view of my portfolio.</p>
                 <h2>About Me</h2>
-                <p>I'm a NIT A / IIT D alum with experience in FinTech, especially in Insurance at PhonePe. 
+                <p>I'm a NIT A [Gold Medallist] alum with experience in FinTech, especially in Insurance at PhonePe and Hardware. 
                    Previously, I founded BlueVelocity Technologies Private Limited and have been involved in 
                    creating various products and winning hackathons.</p>
+                   <p> I've been working on a lot of hardware products and spending time with the FinTech evolution as well. </p>
                 <h2>Skills & Expertise</h2>
-                <p>My expertise spans across hardware and software development, with a current focus on 
-                   connecting FinTech with AI technologies.</p>
+                <p>My expertise spans across hardware and software, with a current focus on 
+                   connecting FinTech with AI technologies. I carry Innovation as a forte and I'm pretty much focused into disruption.</p>
                 <div class="action-buttons">
                     <button onclick="switchToTerminalMode()" class="mode-switch-btn">Switch to Terminal Mode</button>
                 </div>
