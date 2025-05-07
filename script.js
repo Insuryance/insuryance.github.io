@@ -6,72 +6,81 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log("Script loaded successfully"); // Debugging log
-    // Particle background with repulsion effect and soft purple color
-tsParticles.load("tsparticles", {
-    background: {
-        color: {
-            value: "#00000000" // transparent
-        }
-    },
-    fpsLimit: 60,
-    interactivity: {
-        events: {
-            onHover: {
-                enable: true,
-                mode: "repulse"
+    
+    // Only load particles on desktop (screen width > 768px)
+    if (window.innerWidth > 768) {
+        // Particle background with repulsion effect and soft purple color
+        tsParticles.load("tsparticles", {
+            background: {
+                color: {
+                    value: "#00000000" // transparent
+                }
             },
-            resize: true
-        },
-        modes: {
-            repulse: {
-                distance: 100,
-                duration: 0.4
-            }
-        }
-    },
-    particles: {
-        color: {
-            value: "#c8a2c8" // soft purple
-        },
-        links: {
-            color: "#c8a2c8",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1
-        },
-        collisions: {
-            enable: true
-        },
-        move: {
-            direction: "none",
-            enable: true,
-            outModes: {
-                default: "bounce"
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    resize: true
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    }
+                }
             },
-            random: false,
-            speed: 1,
-            straight: false
-        },
-        number: {
-            density: {
-                enable: true,
-                area: 800
+            particles: {
+                color: {
+                    value: "#c8a2c8" // soft purple
+                },
+                links: {
+                    color: "#c8a2c8",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 1
+                },
+                collisions: {
+                    enable: true
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: {
+                        default: "bounce"
+                    },
+                    random: false,
+                    speed: 1,
+                    straight: false
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800
+                    },
+                    value: 60
+                },
+                opacity: {
+                    value: 0.5
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: { min: 1, max: 5 }
+                }
             },
-            value: 60
-        },
-        opacity: {
-            value: 0.5
-        },
-        shape: {
-            type: "circle"
-        },
-        size: {
-            value: { min: 1, max: 5 }
-        }
-    },
-    detectRetina: true
-});
+            detectRetina: true
+        });
+    } else {
+        console.log("Mobile device detected, particles disabled");
+        // Add a simple background color for mobile
+        document.body.style.backgroundColor = "#1e1e2e";
+    }
+
     // Create Title (InSuryance's Terminal → Surya's Terminal)
     const terminalTitle = document.createElement("h1");
     terminalTitle.id = "terminal-title";
@@ -108,11 +117,18 @@ tsParticles.load("tsparticles", {
     terminalInput.id = "terminal-input";
     terminalInput.type = "text";
     terminalInput.autofocus = true;
+    terminalInput.setAttribute("autocomplete", "off"); // Disable autocomplete for better mobile experience
+    terminalInput.setAttribute("autocorrect", "off"); // Disable autocorrect for better mobile experience
+    terminalInput.setAttribute("spellcheck", "false"); // Disable spellcheck
 
     terminalInputContainer.appendChild(terminalInput);
     app.appendChild(terminalInputContainer);
 
+    // Focus the input field (with mobile compatibility)
     terminalInput.focus();
+    document.addEventListener("click", function() {
+        terminalInput.focus();
+    });
 
     // Boot-up welcome text
     const bootText = [
@@ -132,7 +148,7 @@ tsParticles.load("tsparticles", {
 
     showBootText();
 
-    // Falling animation for InSuryance letters
+    // Falling animation for InSuryance letters (adjusted for better performance)
     setTimeout(() => {
         document.querySelectorAll(".fall").forEach((letter, index) => {
             setTimeout(() => {
@@ -149,24 +165,43 @@ tsParticles.load("tsparticles", {
         }, 3000);
     }, 2000); // Wait 2s before starting the drop effect
 
-    // Handle user input
+    // Handle user input with improved mobile support
     terminalInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            let inputValue = terminalInput.value.trim().toLowerCase();
-            terminalInput.value = "";
-
-            if (inputValue === "clear") {
-                clearTerminal();
-                return;
-            }
-
-            let response = interpretCommand(inputValue);
-            const newLine = document.createElement('p');
-            newLine.innerHTML = response;
-            terminalOutput.appendChild(newLine);
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            processCommand();
         }
     });
+    
+    // For mobile touch devices, add a send button
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        const sendButton = document.createElement("button");
+        sendButton.id = "send-button";
+        sendButton.textContent = "➤";
+        sendButton.classList.add("send-command-btn");
+        sendButton.addEventListener("click", processCommand);
+        terminalInputContainer.appendChild(sendButton);
+    }
+    
+    function processCommand() {
+        let inputValue = terminalInput.value.trim().toLowerCase();
+        terminalInput.value = "";
+
+        // Show the command that was entered
+        const commandLine = document.createElement('p');
+        commandLine.innerHTML = `<span class='prompt'>\u03BB :: ~ &gt;&gt;</span> <span class="user-command">${inputValue}</span>`;
+        terminalOutput.appendChild(commandLine);
+
+        if (inputValue === "clear") {
+            clearTerminal();
+            return;
+        }
+
+        let response = interpretCommand(inputValue);
+        const newLine = document.createElement('p');
+        newLine.innerHTML = response;
+        terminalOutput.appendChild(newLine);
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
     
     function interpretCommand(command) {
         switch (command) {
@@ -189,14 +224,14 @@ tsParticles.load("tsparticles", {
                     " I've made products both in the hardware and the software space. <br>" +
                     " I have three pending patents in the hardware space and have received grants for multiple software products as well. <br>" +
                     " If you're lurking, let's connect! <br>" +
-                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" style="color: lightblue; target="_blank">LinkedIn</a>'
+                    'Check me out on <a href="https://www.linkedin.com/in/suryanshamtiwari" style="color: lightblue;" target="_blank">LinkedIn</a>'
                 );
             case "contact":
                 return (
                     'Email: <a href="mailto:insuryance@gmail.com" style="color: lightblue;">insuryance@gmail.com</a>'
                 );
             case "switch":
-                document.body.classList.toggle("normal-mode");
+                switchToNormalMode();
                 return "Switched to normal mode!";
             case "media_coverage":
                 return (
@@ -206,7 +241,7 @@ tsParticles.load("tsparticles", {
                    "<a href='https://www.devdiscourse.com/article/education/1506202-hyundai-motor-india-foundation-announces-the-winner-of-h-social-creator-2020' target='_blank' style='color:#a79dcf;'>RandomMediaOutlet</a> <br>" +
                    "<a href='https://www.businessworld.in/article/hyundai-motor-india-foundation-announces-winner-of-h-social-creator-2020-384562' target='_blank' style='color:#a79dcf;'>BusinessWorld</a> <br>" +
                    "<a href='https://chennaiglitz.com/hyundai-motor-india-foundation-announces-the-winners-of-h-social-creator-2021/' target='_blank' style='color:#a79dcf;'>ChennaiGlitz</a> and More."
-                            );
+                );
                 
             case "hackathons":
                 return (
@@ -225,7 +260,7 @@ tsParticles.load("tsparticles", {
                     "Patent Number 1: <span style='color: lightblue;'>202211031547</span> [ A simple device to extract shellac ] <br>" +
                     "Patent Number 2: <span style='color: lightblue;'>202211013032</span> [ A simple device to create artificial shellac on trees ] <br>" +
                     "Patent Number 3: <span style='color: lightblue;'>202211013031</span> [ Fluid based Speed Breakers that does not give any jerk and reduces speed automatically ]" 
-                       );
+                );
                 
             case "articles":
                 return (
@@ -246,38 +281,115 @@ tsParticles.load("tsparticles", {
         showBootText(); // Redisplay initial boot text after clearing           
     }
 
-function switchToNormalMode() {
-  const body = document.body;
-  const terminalContainer = document.querySelector('.terminal-container');
-  const normalContainer = document.querySelector('.normal-mode-container');
+    // Add global function for switching to normal mode
+    window.switchToNormalMode = function() {
+        const body = document.body;
+        const terminalContainer = document.getElementById('app');
+        
+        // Check if normal-mode-container exists, create if not
+        let normalContainer = document.querySelector('.normal-mode-container');
+        if (!normalContainer) {
+            normalContainer = document.createElement('div');
+            normalContainer.className = 'normal-mode-container';
+            normalContainer.style.display = 'none';
+            normalContainer.innerHTML = `
+                <h1>Suryansham Tiwari</h1>
+                <p>Welcome to my personal website. This is the normal view of my portfolio.</p>
+                <h2>About Me</h2>
+                <p>I'm a NIT A / IIT D alum with experience in FinTech, especially in Insurance at PhonePe. 
+                   Previously, I founded BlueVelocity Technologies Private Limited and have been involved in 
+                   creating various products and winning hackathons.</p>
+                <h2>Skills & Expertise</h2>
+                <p>My expertise spans across hardware and software development, with a current focus on 
+                   connecting FinTech with AI technologies.</p>
+                <div class="action-buttons">
+                    <button onclick="switchToTerminalMode()" class="mode-switch-btn">Switch to Terminal Mode</button>
+                </div>
+            `;
+            document.body.appendChild(normalContainer);
+        }
 
-  // Step 1: Fade out terminal mode
-  terminalContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  terminalContainer.style.opacity = '0';
-  terminalContainer.style.transform = 'scale(0.95)';
+        // Step 1: Fade out terminal mode
+        terminalContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        terminalContainer.style.opacity = '0';
+        terminalContainer.style.transform = 'scale(0.95)';
 
-  // Step 2: After fade, hide terminal and show normal mode
-  setTimeout(() => {
-    terminalContainer.style.display = 'none';
+        // Step 2: After fade, hide terminal and show normal mode
+        setTimeout(() => {
+            terminalContainer.style.display = 'none';
 
-    // Apply light theme
-    body.style.backgroundColor = '#f5f6fa'; // soft pastel background
-    body.style.color = '#333'; // subtle dark text
-    body.style.fontFamily = "'Inter', sans-serif"; // modern font
-    body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+            // Apply light theme
+            body.style.backgroundColor = '#f5f6fa'; // soft pastel background
+            body.style.color = '#333'; // subtle dark text
+            body.style.fontFamily = "'Inter', sans-serif"; // modern font
+            body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
 
-    // Show normal container
-    normalContainer.style.display = 'flex';
-    normalContainer.style.opacity = '0';
-    normalContainer.style.transform = 'translateY(20px)';
-    normalContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            // Show normal container
+            normalContainer.style.display = 'flex';
+            normalContainer.style.opacity = '0';
+            normalContainer.style.transform = 'translateY(20px)';
+            normalContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
 
-    setTimeout(() => {
-      normalContainer.style.opacity = '1';
-      normalContainer.style.transform = 'translateY(0)';
-    }, 50);
-  }, 600);
-}
+            setTimeout(() => {
+                normalContainer.style.opacity = '1';
+                normalContainer.style.transform = 'translateY(0)';
+            }, 50);
+        }, 600);
+    };
 
+    // Add function to switch back to terminal mode
+    window.switchToTerminalMode = function() {
+        const body = document.body;
+        const terminalContainer = document.getElementById('app');
+        const normalContainer = document.querySelector('.normal-mode-container');
+
+        // Step 1: Fade out normal mode
+        normalContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        normalContainer.style.opacity = '0';
+        normalContainer.style.transform = 'translateY(20px)';
+
+        // Step 2: After fade, hide normal mode and show terminal
+        setTimeout(() => {
+            normalContainer.style.display = 'none';
+
+            // Apply dark theme back
+            body.style.backgroundColor = '#1e1e2e';
+            body.style.color = '#9ece6a';
+            body.style.fontFamily = "'Fira Code', monospace";
+
+            // Show terminal container
+            terminalContainer.style.display = 'flex';
+            terminalContainer.style.opacity = '0';
+            terminalContainer.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                terminalContainer.style.opacity = '1';
+                terminalContainer.style.transform = 'scale(1)';
+                terminalInput.focus(); // Re-focus on input
+            }, 50);
+        }, 600);
+    };
+
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', function() {
+        // Adjust terminal layout for better mobile experience
+        if (window.innerWidth <= 768) {
+            // Mobile-specific adjustments
+            if (document.getElementById('tsparticles')) {
+                // Remove particles on mobile resize
+                const particles = document.getElementById('tsparticles');
+                if (particles && particles.parentNode) {
+                    particles.parentNode.removeChild(particles);
+                }
+            }
+        }
+    });
+
+    // Add meta viewport tag for better mobile experience if not already present
+    if (!document.querySelector('meta[name="viewport"]')) {
+        const metaViewport = document.createElement('meta');
+        metaViewport.setAttribute('name', 'viewport');
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+        document.head.appendChild(metaViewport);
     }
-);
+});
