@@ -1,5 +1,7 @@
 /* Import Fira Code font */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+/* Import Inter font for normal mode */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Fullscreen Terminal Styling */
 body {
@@ -36,6 +38,8 @@ body {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 /* Terminal Title */
@@ -79,7 +83,6 @@ body {
     animation-delay: 5s; /* Wait for 5 seconds */
 }
 
-
 /* Move "'s" further right initially */
 .stay {
     display: inline-block;
@@ -103,6 +106,7 @@ body {
     padding-right: 10px;
     overflow: auto;
     scrollbar-width: none;
+    margin-bottom: 20px;
 }
 
 #terminal-output::-webkit-scrollbar {
@@ -120,12 +124,19 @@ body {
     margin-bottom: 0.75rem;
 }
 
+/* User entered commands styling */
+.user-command {
+    color: #7aa2f7; /* Distinguish user commands with blue color */
+    font-weight: 500;
+}
+
 /* Terminal Input */
 #terminal-input-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 15px;
+    width: 100%;
 }
 
 .prompt {
@@ -153,11 +164,27 @@ body {
     border-bottom: none;
 }
 
+/* Send button for mobile */
+.send-command-btn {
+    background: none;
+    border: none;
+    color: #d19a66;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+    margin-left: 10px;
+    outline: none;
+}
+
+.send-command-btn:hover {
+    color: #f0c674;
+}
+
 /* Normal Mode */
 body.normal-mode {
     background-color: #ffffff;
     color: #333;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: block;
     padding: 20px;
 }
@@ -187,12 +214,14 @@ body.normal-mode #app {
     background: #fdfdfd;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     transition: all 0.3s ease;
     line-height: 1.8;
     font-size: 18px;
     animation: fadeIn 1s ease-in-out;
+    display: none;
+    flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -211,6 +240,7 @@ body.normal-mode #app {
 .normal-mode-container h3 {
     color: #5e81ac;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .normal-mode-container a {
@@ -232,6 +262,7 @@ body.normal-mode #app {
 
 .normal-mode-container ul {
     margin-left: 20px;
+    margin-bottom: 15px;
 }
 
 .normal-mode-container img {
@@ -239,7 +270,30 @@ body.normal-mode #app {
     border-radius: 10px;
     margin: 20px 0;
 }
-#particles-js {
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.mode-switch-btn {
+    background-color: #5e81ac;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mode-switch-btn:hover {
+    background-color: #81a1c1;
+}
+
+#tsparticles {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -247,18 +301,21 @@ body.normal-mode #app {
     top: 0;
     left: 0;
 }
-#terminal {
-    position: relative;
-    z-index: 1;
-}
+
+/* Responsive styles for mobile */
 @media (max-width: 768px) {
     #app {
         width: 95%;
         height: auto;
+        min-height: 80vh;
     }
 
     #terminal-title {
         font-size: 32px;
+    }
+
+    .stay.moved {
+        transform: translateX(-100px); /* Adjust for smaller screens */
     }
 
     #terminal-output {
@@ -266,12 +323,39 @@ body.normal-mode #app {
         max-height: 50vh;
     }
 
+    #terminal-input-container {
+        width: 95%;
+    }
+
     #terminal-input {
-        width: 90%;
+        width: 75%;
         font-size: 16px;
     }
 
     .prompt {
         font-size: 16px;
+    }
+
+    .normal-mode-container {
+        padding: 20px;
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    /* Force-disable particles on mobile */
+    #tsparticles {
+        display: none;
+    }
+    
+    /* Adjust falling animation for mobile */
+    @keyframes fallDown {
+        0%, 80% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(30px); /* Smaller drop distance on mobile */
+            opacity: 0;
+        }
     }
 }
