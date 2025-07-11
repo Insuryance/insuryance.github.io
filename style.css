@@ -383,42 +383,7 @@ body.normal-mode #app {
     color: #333;
     margin-bottom: 20px;
 }
-
-#normal-content .normal-section {
-    margin-top: 40px;
-}
-
-#normal-content h2 {
-    font-size: 24px;
-    color: #555;
-}
-
-#normal-content p, 
-#normal-content a {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #444;
-    text-decoration: none;
-}
-
-#normal-content a:hover {
-    text-decoration: underline;
-}
-
-    #normal-content {
-    display: none;
-    padding: 40px;
-    max-width: 900px;
-    margin: 40px auto;
-    font-family: 'Inter', sans-serif;
-}
-
-body.normal-mode #normal-content {
-    display: block;
-}
-
-    
-    /* Adjust falling animation for mobile */
+/* Adjust falling animation for mobile */
     @keyframes fallDown {
         0%, 80% {
             transform: translateY(0);
