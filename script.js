@@ -294,33 +294,80 @@ document.addEventListener("DOMContentLoaded", function () {
         const terminalContainer = document.getElementById('app');
         
         // Check if normal-mode-container exists, create if not
-        let normalContainer = document.querySelector('.normal-mode-container');
-        if (!normalContainer) {
-            normalContainer = document.createElement('div');
-            normalContainer.className = 'normal-mode-container';
-            normalContainer.style.display = 'none';
-            normalContainer.innerHTML = `
-                <h1>Suryansham Tiwari</h1>
-                <p>Welcome to my personal website. This is the normal view of my portfolio.</p>
-                <h2>About Me</h2>
-                <p>I'm a NIT A [Gold Medallist] alum with experience in FinTech, especially in Insurance at PhonePe and Hardware. 
-                   Previously, I founded BlueVelocity Technologies Private Limited and have been involved in 
-                   creating various products and winning hackathons.</p>
-                   <p> I've been working on a lot of hardware products and spending time with the FinTech evolution as well. </p>
-                <h2>Skills & Expertise</h2>
-                <p>My expertise spans across hardware and software, with a current focus on 
-                   connecting FinTech with AI technologies. I carry Innovation as a forte and I'm pretty much focused into disruption.</p>
-                <div class="action-buttons">
-                    <button onclick="switchToTerminalMode()" class="mode-switch-btn">Switch to Terminal Mode</button>
-                </div>
-            `;
-            document.body.appendChild(normalContainer);
-        }
+        let normalContainer = document.getElementById('normal-content');
+           // Remove existing if present
+    if (normalContainer) {
+        normalContainer.remove();
+    }
 
-        // Step 1: Fade out terminal mode
-        terminalContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        terminalContainer.style.opacity = '0';
-        terminalContainer.style.transform = 'scale(0.95)';
+    // Create new container with portfolio content
+    normalContainer = document.createElement('div');
+    normalContainer.className = 'normal-mode-container';
+    normalContainer.id = 'normal-content';
+    normalContainer.style.display = 'none';
+
+    normalContainer.innerHTML = `
+        <h1>Suryansham Tiwari</h1>
+        <p>Welcome to my personal website. This is the clean portfolio view.</p>
+
+        <h2>About Me</h2>
+        <p>
+            I'm a <strong>NIT Agartala</strong> gold medalist, former insurance product lead at <strong>PhonePe</strong>, and founder of
+            <strong>BlueVelocity Technologies</strong>. I thrive at the intersection of FinTech, AI, and product innovation.
+            I've also built hardware devices and authored multiple patents. Always chasing the next big idea.
+        </p>
+
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>PhonePe</strong> – Insurance & FinTech Team</li>
+            <li><strong>Founder</strong> – BlueVelocity Technologies Pvt. Ltd.</li>
+            <li><strong>Hackathon Champion</strong> – Hyundai, ORF, Unleash, Oxford, UiPath</li>
+        </ul>
+
+        <h2>Skills & Technologies</h2>
+        <ul>
+            <li><strong>Languages:</strong> Python, JavaScript, C++, Solidity</li>
+            <li><strong>Frameworks:</strong> React, Tailwind CSS, Node.js</li>
+            <li><strong>Tools:</strong> GitHub, Figma, Firebase, Unity3D</li>
+            <li><strong>AI/ML:</strong> TensorFlow, Reinforcement Learning</li>
+        </ul>
+
+        <h2>Projects & Startups</h2>
+        <ul>
+            <li><strong>FinLead AI:</strong> Commission analytics dashboard for insurers & brokers</li>
+            <li><strong>Gripz AI:</strong> Smart sensor-based e-mobility grips for connected vehicles</li>
+            <li><strong>Shellac Extractor:</strong> Patent-pending device for lac extraction</li>
+            <li><strong>Flood Rescue XR:</strong> Winner – Oxford Global Hackathon (XR flood navigation system)</li>
+        </ul>
+
+        <h2>Education</h2>
+        <ul>
+            <li>B.Tech – National Institute of Technology Agartala – <strong>Gold Medalist</strong></li>
+            <li>Ex. Researcher – IIT Delhi | Deep Reinforcement Learning (Unity3D Ball Balancer)</li>
+        </ul>
+
+        <h2>Articles & Media</h2>
+        <ul>
+            <li>
+                📖 <a href="https://www.researchgate.net/publication/390231443_Development_of_Deep_Reinforcement_Learning_models_in_a_Ball_Balancing_Environment_using_Unity3D" target="_blank">Unity3D Ball Balancer – ResearchGate</a>
+            </li>
+            <li>
+                📰 <a href="https://www.northeasttoday.in/2022/04/09/tripura-suryansham-t-sonali-rastogi-from-nit-agartala-tops-in-hyundai-social-creator-awards-2021/" target="_blank">NorthEast Today</a>
+            </li>
+            <li>
+                ✍️ <a href="https://medium.com/@insuryance" target="_blank">Medium Blog</a>
+            </li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:insuryance@gmail.com">insuryance@gmail.com</a></p>
+
+        <div class="action-buttons">
+            <button onclick="switchToTerminalMode()" class="mode-switch-btn">Back to Terminal Mode</button>
+        </div>
+    `;
+
+    document.body.appendChild(normalContainer);
 
         // Step 2: After fade, hide terminal and show normal mode
         setTimeout(() => {
