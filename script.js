@@ -305,9 +305,15 @@ document.addEventListener("DOMContentLoaded", function () {
     normalContainer.className = 'normal-mode-container';
     normalContainer.id = 'normal-content';
     normalContainer.style.display = 'none';
+    <img src="your-image.jpg" alt="Profile picture" style="width: 120px; border-radius: 50%; margin-bottom: 10px;">
+    <p>
+      <a href="https://github.com/yourgithub" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/suryanshamtiwari" target="_blank">LinkedIn</a>
+    </p>
 
     normalContainer.innerHTML = `
         <h1>Suryansham Tiwari</h1>
+        
         <p>Welcome to my personal website. This is the clean portfolio view.</p>
 
         <h2>About Me</h2>
