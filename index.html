@@ -92,7 +92,6 @@
             max-height: 50vh;
             overflow-y: auto;
             background-color: rgba(27, 27, 41, 0.9);
-            border: 1px solid #414868;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 15px;
@@ -136,7 +135,6 @@
             width: 100%;
             max-width: 100%;
             background-color: rgba(27, 27, 41, 0.9);
-            border: 1px solid #414868;
             border-radius: 8px;
             padding: 10px 15px;
             backdrop-filter: blur(10px);
@@ -290,11 +288,11 @@
             
             // Only load particles on desktop (screen width > 768px)
             if (window.innerWidth > 768) {
-                // Particle background with fewer particles, focused near the terminal area
+                // Particle background with more particles and calming colors
                 tsParticles.load("tsparticles", {
                     background: {
                         color: {
-                            value: "#1b1b29" // transparent
+                            value: "#1b1b29"
                         }
                     },
                     fpsLimit: 60,
@@ -312,21 +310,21 @@
                         },
                         modes: {
                             repulse: {
-                                distance: 80,
+                                distance: 100,
                                 duration: 0.4
                             }
                         }
                     },
                     particles: {
                         color: {
-                            value: "#c8a2c8" // soft purple
+                            value: "#89CFF0" // Sky blue - calming and friendly
                         },
                         links: {
-                            color: "#c8a2c8",
-                            distance: 120,
+                            color: "#89CFF0",
+                            distance: 150,
                             enable: true,
-                            opacity: 0.3,
-                            width: 1
+                            opacity: 0.4,
+                            width: 1.5
                         },
                         collisions: {
                             enable: false
@@ -338,23 +336,23 @@
                                 default: "out"
                             },
                             random: true,
-                            speed: 0.8,
+                            speed: 1.2,
                             straight: false
                         },
                         number: {
                             density: {
                                 enable: true,
-                                area: 1200
+                                area: 800
                             },
-                            value: 25
+                            value: 60
                         },
                         opacity: {
-                            value: 0.4,
+                            value: 0.6,
                             random: true,
                             anim: {
                                 enable: true,
-                                speed: 1,
-                                opacity_min: 0.1,
+                                speed: 1.5,
+                                opacity_min: 0.2,
                                 sync: false
                             }
                         },
@@ -362,11 +360,11 @@
                             type: "circle"
                         },
                         size: {
-                            value: { min: 1, max: 3 },
+                            value: { min: 1, max: 4 },
                             random: true,
                             anim: {
                                 enable: true,
-                                speed: 2,
+                                speed: 3,
                                 size_min: 0.5,
                                 sync: false
                             }
