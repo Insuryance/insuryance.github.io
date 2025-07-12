@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         enable: true,
                         mode: "repulse"
                     },
+                            onClick: {
+                    enable: true,
+                    mode: "repulse"
+                },
+        resize: true
+    },
                     resize: true
                 },
                 modes: {
@@ -140,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Boot-up welcome text
     const bootText = [
         "insuryance:$ type help to start",
-        "<a href='#' onclick='switchToNormalMode()' style='color: lightblue; text-decoration: none;'>Visit Normal website</a>",
+        "<a href='https://insuryance.github.io/NormalPage/' onclick='switchToNormalMode()' style='color: lightblue; text-decoration: none;'>Visit Normal website</a>",
         "",
     ];
 
