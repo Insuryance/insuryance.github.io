@@ -47,33 +47,41 @@
         }
 
         #terminal-title {
-            font-size: clamp(2rem, 6vw, 4rem);
+            font-size: clamp(1.5rem, 8vw, 4rem);
             margin-bottom: 30px;
             text-align: center;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: clamp(0.5px, 1vw, 2px);
             text-shadow: 0 0 20px rgba(158, 206, 106, 0.5);
-            white-space: nowrap;
-
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
         }
 
         .fall-container {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
         }
 
         .fall {
             display: inline-block;
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .stay {
             display: inline-block;
             transition: all 1s ease;
-            margin-left: 0.5rem;
+            margin-left: clamp(0.2rem, 1vw, 0.5rem);
+            flex-shrink: 0;
         }
 
         .stay.moved {
-            transform: translateX(clamp(-250px, -20vw, -100px));
+            transform: translateX(clamp(-100px, -15vw, -50px));
         }
 
         @keyframes fallDown {
@@ -82,7 +90,7 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(300px) rotate(180deg);
+                transform: translateY(clamp(150px, 30vh, 300px)) rotate(180deg);
                 opacity: 0;
             }
         }
@@ -90,23 +98,23 @@
         #terminal-output {
             width: 100%;
             max-width: 900px;
-            min-height: 200px;
-            max-height: 50vh;
+            min-height: clamp(150px, 25vh, 200px);
+            max-height: clamp(300px, 50vh, 600px);
             overflow-y: auto;
             background-color: rgba(27, 27, 41, 0.9);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
+            border-radius: clamp(8px, 2vw, 12px);
+            padding: clamp(15px, 4vw, 25px);
+            margin-bottom: clamp(15px, 3vw, 20px);
             backdrop-filter: blur(10px);
             scrollbar-width: thin;
             scrollbar-color: #414868 rgba(27, 27, 41, 0.9);
             box-sizing: border-box;
-            font-size: clamp(14px, 2vw, 18px);
+            font-size: clamp(12px, 3.5vw, 18px);
             line-height: 1.6;
         }
 
         #terminal-output::-webkit-scrollbar {
-            width: 8px;
+            width: clamp(6px, 1.5vw, 8px);
         }
 
         #terminal-output::-webkit-scrollbar-track {
@@ -120,9 +128,10 @@
         }
 
         #terminal-output p {
-            margin: 10px 0;
+            margin: clamp(8px, 2vw, 10px) 0;
             line-height: 1.6;
             word-wrap: break-word;
+            hyphens: auto;
         }
 
         .prompt {
@@ -141,11 +150,12 @@
             width: 100%;
             max-width: 900px;
             background-color: rgba(27, 27, 41, 0.9);
-            border-radius: 12px;
-            padding: 15px 20px;
+            border-radius: clamp(8px, 2vw, 12px);
+            padding: clamp(10px, 3vw, 15px) clamp(15px, 4vw, 20px);
             backdrop-filter: blur(10px);
             box-sizing: border-box;
-            font-size: clamp(14px, 2vw, 18px);
+            font-size: clamp(12px, 3.5vw, 18px);
+            min-height: clamp(40px, 8vw, 60px);
         }
 
         #terminal-input {
@@ -154,10 +164,11 @@
             border: none;
             color: #9ece6a;
             font-family: 'Fira Code', monospace;
-            font-size: clamp(14px, 2vw, 18px);
+            font-size: clamp(12px, 3.5vw, 18px);
             outline: none;
-            margin-left: 15px;
-            padding: 5px 0;
+            margin-left: clamp(8px, 2vw, 15px);
+            padding: clamp(3px, 1vw, 5px) 0;
+            min-height: clamp(20px, 4vw, 30px);
         }
 
         #terminal-input::placeholder {
@@ -168,22 +179,29 @@
             background: #f38ba8;
             color: #1b1b29;
             border: none;
-            padding: 8px 15px;
-            border-radius: 6px;
+            padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
+            border-radius: clamp(4px, 1vw, 6px);
             cursor: pointer;
-            font-size: clamp(14px, 2vw, 16px);
-            margin-left: 15px;
+            font-size: clamp(12px, 3vw, 16px);
+            margin-left: clamp(8px, 2vw, 15px);
             transition: background-color 0.3s ease;
             font-weight: 500;
+            flex-shrink: 0;
+            min-height: clamp(28px, 6vw, 36px);
         }
 
         .send-command-btn:hover {
             background: #eba0ac;
         }
 
+        .send-command-btn:active {
+            transform: scale(0.95);
+        }
+
         a {
             color: #74c7ec;
             text-decoration: none;
+            word-break: break-all;
         }
 
         a:hover {
@@ -196,31 +214,31 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: clamp(20px, 5vw, 40px);
             max-width: 1000px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
         .normal-mode-container h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            margin-bottom: clamp(15px, 3vw, 20px);
             color: #333;
             font-weight: 600;
             text-align: center;
         }
 
         .normal-mode-container h2 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            margin: 30px 0 15px 0;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            margin: clamp(20px, 4vw, 30px) 0 clamp(10px, 2vw, 15px) 0;
             color: #444;
             font-weight: 500;
             text-align: center;
         }
 
         .normal-mode-container p {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            margin-bottom: 15px;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            margin-bottom: clamp(12px, 3vw, 15px);
             color: #666;
             max-width: 800px;
             text-align: center;
@@ -228,17 +246,17 @@
         }
 
         .action-buttons {
-            margin-top: 30px;
+            margin-top: clamp(20px, 4vw, 30px);
         }
 
         .mode-switch-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: clamp(10px, 3vw, 12px) clamp(18px, 4vw, 24px);
+            border-radius: clamp(6px, 1.5vw, 8px);
             cursor: pointer;
-            font-size: clamp(14px, 2.5vw, 16px);
+            font-size: clamp(14px, 3vw, 16px);
             font-weight: 500;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
@@ -249,65 +267,101 @@
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
+        .mode-switch-btn:active {
+            transform: translateY(0);
+        }
+
         /* Mobile specific optimizations */
         @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
             #app {
-                padding: 15px;
-                padding-top: 2vh;
+                padding: clamp(10px, 3vw, 15px);
+                padding-top: clamp(2vh, 3vw, 3vh);
             }
 
             #terminal-title {
-                letter-spacing: 1px;
-                margin-bottom: 20px;
+                margin-bottom: clamp(15px, 3vw, 20px);
+                font-size: clamp(1.8rem, 9vw, 3rem);
             }
 
             #terminal-output {
-                padding: 20px;
-                margin-bottom: 15px;
-                max-height: 45vh;
-                border-radius: 10px;
+                min-height: clamp(200px, 35vh, 300px);
+                max-height: clamp(250px, 45vh, 400px);
             }
 
             #terminal-input-container {
-                padding: 12px 15px;
-                border-radius: 10px;
+                flex-wrap: nowrap;
+                gap: clamp(8px, 2vw, 12px);
             }
 
             #terminal-input {
-                margin-left: 10px;
+                min-width: 0;
+                flex: 1;
+                margin-left: clamp(5px, 1vw, 10px);
             }
 
             .send-command-btn {
-                padding: 6px 12px;
-                margin-left: 10px;
+                margin-left: clamp(5px, 1vw, 10px);
+                white-space: nowrap;
             }
 
             .stay {
-                margin-left: 0.3rem;
+                margin-left: clamp(0.2rem, 1vw, 0.3rem);
+            }
+
+            .stay.moved {
+                transform: translateX(clamp(-80px, -12vw, -50px));
             }
         }
 
         /* Extra small screens */
         @media (max-width: 480px) {
             #app {
-                padding: 10px;
+                padding: clamp(8px, 2vw, 12px);
+                padding-top: clamp(1vh, 2vw, 2vh);
             }
 
             #terminal-title {
-                letter-spacing: 0.5px;
+                font-size: clamp(1.6rem, 10vw, 2.5rem);
+                letter-spacing: clamp(0.3px, 0.5vw, 1px);
             }
 
             #terminal-output {
-                padding: 15px;
-                max-height: 40vh;
+                min-height: clamp(180px, 40vh, 280px);
+                max-height: clamp(220px, 50vh, 350px);
+                padding: clamp(12px, 3vw, 18px);
             }
 
             #terminal-input-container {
-                padding: 10px 12px;
+                padding: clamp(8px, 2vw, 12px) clamp(10px, 3vw, 15px);
             }
 
             .stay.moved {
-                transform: translateX(-50px);
+                transform: translateX(clamp(-60px, -10vw, -40px));
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            #terminal-title {
+                font-size: clamp(1.4rem, 12vw, 2rem);
+            }
+
+            #terminal-output {
+                font-size: clamp(11px, 4vw, 14px);
+            }
+
+            #terminal-input,
+            #terminal-input-container {
+                font-size: clamp(11px, 4vw, 14px);
+            }
+
+            .send-command-btn {
+                font-size: clamp(11px, 3.5vw, 14px);
+                padding: clamp(5px, 1.5vw, 7px) clamp(8px, 2.5vw, 12px);
             }
         }
 
@@ -321,6 +375,44 @@
             #terminal-input-container {
                 max-width: 1000px;
                 padding: 20px 25px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+            #app {
+                padding-top: clamp(1vh, 2vw, 2vh);
+            }
+
+            #terminal-title {
+                margin-bottom: clamp(10px, 2vw, 15px);
+                font-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+
+            #terminal-output {
+                min-height: clamp(120px, 25vh, 200px);
+                max-height: clamp(160px, 35vh, 250px);
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            #terminal-title {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .send-command-btn,
+            .mode-switch-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            #terminal-input {
+                padding: clamp(8px, 2vw, 12px) 0;
             }
         }
     </style>
@@ -345,7 +437,7 @@
                 document.body.prepend(particlesDiv);
             }
             
-            // Only load particles on desktop (screen width > 768px)
+            // Only load particles on desktop and tablet (screen width > 768px)
             if (window.innerWidth > 768) {
                 // Particle background with more particles and calming colors
                 tsParticles.load("tsparticles", {
@@ -475,14 +567,30 @@
             terminalInput.setAttribute("autocomplete", "off");
             terminalInput.setAttribute("autocorrect", "off");
             terminalInput.setAttribute("spellcheck", "false");
+            terminalInput.setAttribute("autocapitalize", "none");
 
             terminalInputContainer.appendChild(terminalInput);
+
+            // Always add send button for better mobile experience
+            const sendButton = document.createElement("button");
+            sendButton.id = "send-button";
+            sendButton.textContent = "➤";
+            sendButton.classList.add("send-command-btn");
+            sendButton.addEventListener("click", processCommand);
+            terminalInputContainer.appendChild(sendButton);
+
             app.appendChild(terminalInputContainer);
 
             // Focus the input field (with mobile compatibility)
             terminalInput.focus();
-            document.addEventListener("click", function() {
-                terminalInput.focus();
+            
+            // Handle focus for mobile devices
+            document.addEventListener("click", function(event) {
+                if (event.target !== terminalInput && event.target !== sendButton) {
+                    setTimeout(() => {
+                        terminalInput.focus();
+                    }, 100);
+                }
             });
 
             // Boot-up welcome text
@@ -523,19 +631,20 @@
             // Handle user input with improved mobile support
             terminalInput.addEventListener("keydown", function (event) {
                 if (event.key === "Enter") {
+                    event.preventDefault();
                     processCommand();
                 }
             });
-            
-            // For mobile touch devices, add a send button
-            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-                const sendButton = document.createElement("button");
-                sendButton.id = "send-button";
-                sendButton.textContent = "➤";
-                sendButton.classList.add("send-command-btn");
-                sendButton.addEventListener("click", processCommand);
-                terminalInputContainer.appendChild(sendButton);
-            }
+
+            // Prevent zoom on double tap for iOS
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
             
             function processCommand() {
                 let inputValue = terminalInput.value.trim().toLowerCase();
@@ -556,6 +665,11 @@
                 newLine.innerHTML = response;
                 terminalOutput.appendChild(newLine);
                 terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                
+                // Refocus input after command
+                setTimeout(() => {
+                    terminalInput.focus();
+                }, 100);
             }
             
             function interpretCommand(command) {
